@@ -21,7 +21,9 @@ class SubcategorySeeder extends Seeder
                 'category_id' => 1,
                 'name' => 'Celulares y smartphone',
                 'slug' => Str::slug('Celulares y smartphone'),
-                'color' => true
+                'color' => true,
+                'capacity' => true,
+                'detail' => true    
             ],
             [
                 'category_id' => 1,
@@ -34,12 +36,12 @@ class SubcategorySeeder extends Seeder
                 'slug' => Str::slug('Smartwatches')    
             ],
 
-            /*Celulares y tablets*/ 
+            /*Tv y audios*/ 
 
             [
                 'category_id' => 2,
                 'name' => 'Tv y audio',
-                'slug' => Str::slug('Tv y audio')    
+                'slug' => Str::slug('Tv y audio')                
             ],
             [
                 'category_id' => 2,
@@ -56,7 +58,7 @@ class SubcategorySeeder extends Seeder
             [
                 'category_id' => 3,
                 'name' => 'Xbox',
-                'slug' => Str::slug('Xbox')    
+                'slug' => Str::slug('Xbox'),                   
             ],
             [
                 'category_id' => 3,
@@ -79,12 +81,17 @@ class SubcategorySeeder extends Seeder
             [
                 'category_id' => 4,
                 'name' => 'Portatiles',
-                'slug' => Str::slug('Portatiles')    
+                'slug' => Str::slug('Portatiles'),
+                'color' => true,
+                'capacity' => true,
+                'detail' => true   
             ],
             [
                 'category_id' => 4,
                 'name' => 'Pc escritorio',
-                'slug' => Str::slug('Pc escritorio')    
+                'slug' => Str::slug('Pc escritorio'),
+                'color' => true,
+                'capacity' => true,                  
             ],
             [
                 'category_id' => 4,
