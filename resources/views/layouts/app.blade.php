@@ -37,5 +37,24 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script>
+            function dropdown(){
+                return {
+                    open: false,
+                    show(){
+                        if(this.open){
+                            //se cierra el menu
+                            this.open = false;
+                            document.getElementsByTagName('html')[0].style.overflow = 'auto'
+                        }else{
+                            //se abre el menu
+                            this.open = true;
+                            document.getElementsByTagName('html')[0].style.overflow = 'hidden'
+                        }
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
