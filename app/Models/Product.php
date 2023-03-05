@@ -45,7 +45,7 @@ class Product extends Model
     }
 
     //Relacion muchos a muchos
-    public function color(){
+    public function colors(){
         return $this->belongsToMany(color::class);
     }
 
