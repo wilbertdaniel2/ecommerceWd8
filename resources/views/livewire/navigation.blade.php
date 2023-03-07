@@ -1,4 +1,4 @@
-<header class="bg-neutral sticky top-0" x-data="dropdown()">
+<header class="bg-neutral sticky top-0 z-50" x-data="dropdown()">
     <div class="container flex items-center h-14 justify-between md:justify-start">
         <a  :class="{'bg-opacity-100 text-red' : open}"
             x-on:click="show()"
