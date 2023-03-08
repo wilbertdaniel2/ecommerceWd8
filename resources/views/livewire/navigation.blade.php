@@ -98,7 +98,7 @@
                 <ul class="bg-white">
                     @foreach ($categories as $category)
                         <li class="navigation-link text-truegray hover:bg-red hover:text-white">
-                            <a href="" class="py-2 px-4 text-sm flex items-center">
+                            <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center">
 
                                 <span class="flex justify-center w-9">
                                     {{--Se colocan los signos de exclamacion para pedirle a blade que escape el codigo html, para que se 
@@ -135,7 +135,7 @@
             <ul>
                 @foreach ($categories as $category)
                 <li class="text-truegray hover:bg-red hover:text-white">
-                    <a href="" class="py-2 px-4 text-sm flex items-center">
+                    <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center">
 
                         <span class="flex justify-center w-9">
                             {{--Se colocan los signos de exclamacion para pedirle a blade que escape el codigo html, para que se 

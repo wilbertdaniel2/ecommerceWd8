@@ -19,6 +19,7 @@ module.exports = {
             colors: {
                 'neutral': '#171717',
                 'red': '#dc2626',
+                'red400': '#f87171',
                 'gray': '#f3f4f6',
                 'truegray': '#1f2937'              
               }
