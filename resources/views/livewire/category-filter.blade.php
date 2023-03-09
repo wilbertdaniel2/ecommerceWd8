@@ -11,7 +11,8 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
         <aside>
 
             
@@ -45,10 +46,10 @@
         </aside>
 
 
-        <div class="col-span-4">
+        <div class="md:col-span-2 lg:col-span-4">
             @if ($view == 'grid')
 
-            <ul class="grid grid-cols-4 gap-6">
+            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach ($products as $product)
                 <li class="bg-white rounded-lg shadow">
                         
