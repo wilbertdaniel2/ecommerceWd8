@@ -55,12 +55,15 @@
                         
                     <article>
                             <figure>
-                                <img class="h-48 w-full object-cover object-center" src="{{Storage::url($product->images->first()->url)}}" alt="">
+                                <a href="{{ route('products.show', $product) }}">
+                                    <img class="h-48 w-full object-cover object-center" src="{{Storage::url($product->images->first()->url)}}" alt="">
+                                </a>
+                                
                             </figure>
 
                             <div class="py-4 px-6">
                                 <h1 class="text-lg font-semibold">
-                                    <a href="">
+                                    <a href=" {{ route('products.show', $product) }}">
                                         {{Str::limit($product->name, 20)}} {{--Con esta linea de codigo estoy limitando a que solo se muestre los primeros 20 caracteres del nombre del producto--}}
                                     </a>
                                 </h1>
@@ -78,9 +81,12 @@
                 @foreach ($products as $product)
                 <li class="bg-white rounded-lg shadow mb-4">
                     <article class="flex">
-                        <figure>
-                            <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($product->images->first()->url) }}" alt="">
-                        </figure>
+                        <a href="{{ route('products.show', $product) }}">
+                            <figure>
+                                <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($product->images->first()->url) }}" alt="">
+                            </figure>
+                        </a>
+                    
 
                         <div class="flex-1 py-4 px-6 flex flex-col">
                             <div class="flex justify-between">
@@ -114,9 +120,9 @@
                             </div>
 
                             <div class="mt-auto mb-8">
-                                <x-jet-danger-button>
+                                <x-danger-enlace href=" {{ route('products.show', $product) }}">
                                     Mas información
-                                </x-jet-danger-button>
+                                </x-danger-enlace>
                             </div>
                         </div>
                     </article>

@@ -46,11 +46,16 @@ class Product extends Model
 
     //Relacion muchos a muchos
     public function colors(){
-        return $this->belongsToMany(color::class);
+        return $this->belongsToMany(color::class)->withPivot('quantity');
     }
 
     //Relacion uno a muchos polimorfica
     public function images(){
         return $this->morphMany(Image::class, "imageable");
+    }
+
+     //Url amigables
+     public function getRouteKeyName(){
+        return 'slug';
     }
 }

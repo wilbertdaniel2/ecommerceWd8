@@ -13,14 +13,30 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+        {{--FontAwesome--}}
+        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}">
+
+        {{--Glider--}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+
+        {{--FlexSlider--}}
+        <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css')}}">
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
+        {{--Glider--}}
         <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+        {{--Jquery--}}
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+        {{--FlexSlider--}}
+
+        <script src="{{ asset('vendor/FlexSlider/jquery.flexslider-min.js')}}"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

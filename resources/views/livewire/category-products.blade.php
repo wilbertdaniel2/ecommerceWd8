@@ -15,7 +15,7 @@
 
                             <div class="py-4 px-6">
                                 <h1 class="text-lg font-semibold">
-                                    <a href="">
+                                    <a href="{{route('products.show', $product)}}">
                                         {{Str::limit($product->name, 20)}} {{--Con esta linea de codigo estoy limitando a que solo se muestre los primeros 20 caracteres del nombre del producto--}}
                                     </a>
                                 </h1>

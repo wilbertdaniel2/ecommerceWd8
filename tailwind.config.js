@@ -21,6 +21,7 @@ module.exports = {
                 'red': '#dc2626',
                 'red400': '#f87171',
                 'gray': '#f3f4f6',
+                'gray300': '#d1d5db',
                 'truegray': '#1f2937'              
               }
         },

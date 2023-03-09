@@ -15,4 +15,8 @@ class Color extends Model
     public function product(){
         return $this->belongsToMany(Product::class);
     }
+
+    public function capacity(){
+        return $this->belongsToMany(Capacity::class);
+    }
 }

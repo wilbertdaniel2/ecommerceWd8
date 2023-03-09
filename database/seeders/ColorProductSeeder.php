@@ -21,7 +21,7 @@ class ColorProductSeeder extends Seeder
         })->get();
 
         foreach ($products as $product){
-            $product->color()->attach([
+            $product->colors()->attach([
                 1 => [
                     'quantity' => 10
                 ], 
