@@ -21,8 +21,7 @@ class SubcategorySeeder extends Seeder
                 'category_id' => 1,
                 'name' => 'Celulares y smartphone',
                 'slug' => Str::slug('Celulares y smartphone'),
-                'color' => true,
-                'capacity' => false,   
+                'color' => true
             ],
             [
                 'category_id' => 1,

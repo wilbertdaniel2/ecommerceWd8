@@ -20,6 +20,6 @@ class Capacity extends Model
 
     //Relacion muchos a muchos 
     public function colors(){
-        return $this->BelongsToMany(Color::class);
+        return $this->belongsToMany(Color::class);
     }
 }
