@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ColorProductSeeder::class);
 
         $this->call(CapacitySeeder::class);
-        $this->call(ColorCapacitySeeder::class);
+        //$this->call(ColorCapacitySeeder::class);
         //$this->call(DetailSeeder::class);
 
         

@@ -41,7 +41,7 @@
                 </div>
                 
                 {{--Aqui condiciono la informacion que quiero mostrar dependiendo del producto--}}
-                @if ($product->subcategory->size)
+                @if ($product->subcategory->capacity)
 
                     @livewire('add-cart-item-capacity', ['product' => $product])
 
