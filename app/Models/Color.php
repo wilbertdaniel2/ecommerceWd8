@@ -12,11 +12,11 @@ class Color extends Model
     protected $fillable = ['name'];
 
     //Relacion muchos a muchos
-    public function product(){
+    public function products(){
         return $this->belongsToMany(Product::class);
     }
 
-    public function capacity(){
+    public function capacities(){
         return $this->belongsToMany(Capacity::class);
     }
 }

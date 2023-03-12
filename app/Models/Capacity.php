@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 
 class Capacity extends Model
 {
@@ -20,6 +20,6 @@ class Capacity extends Model
 
     //Relacion muchos a muchos 
     public function colors(){
-        return $this->belongsToMany(Color::class);
+        return $this->belongsToMany(Color::class, 'color_capacity')->withPivot('quantity');;
     }
 }

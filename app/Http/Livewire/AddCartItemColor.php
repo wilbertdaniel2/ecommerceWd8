@@ -13,6 +13,14 @@ class AddCartItemColor extends Component
     public $qty = 1;
     public $quantity = 0;
 
+    public function decrement(){
+        $this->qty = $this->qty - 1;
+    }
+
+    public function increment(){
+        $this->qty = $this->qty + 1;
+    }
+
     public function mount(){
         $this->colors = $this->product->colors;
     }
