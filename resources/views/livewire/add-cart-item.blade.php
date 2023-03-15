@@ -1,5 +1,6 @@
 <div x-data>
 
+
     <p class="text-truegray mb-4">
         <span class="font-semibold text-lg"> Stock disponible: </span> {{$quantity}}
     </p>
@@ -28,6 +29,7 @@
 
         <div class="flex-1">
             <x-button class="w-full"
+            x-bind:disabled="$wire.qty > $wire.quantity"
             wire:click="addItem"
             wire:loading.attr="disabled"
             wire:target="addItem">

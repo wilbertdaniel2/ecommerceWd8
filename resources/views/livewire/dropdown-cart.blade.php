@@ -21,7 +21,21 @@
 
                     <article class="flex-1">
                         <h1 class="font-bold">{{$item->name}}</h1>
-                        <p>Cant: {{$item->qty}}</p>
+
+                        <div class="flex">
+                            <p>Cant: {{$item->qty}}</p>
+                            {{--Con esta directiva pregunto si el campo color esta definido, si lo esta me lo agrega al carrito
+                                y si no, solamente lo ignora--}}
+                            @isset($item->options['color'])
+                                <p class="mx-2">-Color: {{ __($item->options['color']) }}</p>
+                            @endisset
+
+                            @isset($item->options['capacity'])
+                            <p>{{($item->options['capacity']) }}</p>
+                        @endisset
+                            
+                        </div>
+
                         <p>COP {{$item->price}}</p>
                     </article>
                 </li>
@@ -42,7 +56,7 @@
                     <p class="text-lg text-truegray mt-2 mb-3"><span class="font-bold">Total</span>: COP {{cART::subtotal()}}</p>
 
 
-                    <x-button-enlace color="red" class="w-full">
+                    <x-button-enlace href="{{ route('shopping-cart') }}" color="red" class="w-full">
                         Ir al carrito de compras
                     </x-button-enlace>
 

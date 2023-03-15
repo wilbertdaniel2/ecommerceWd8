@@ -11,7 +11,7 @@ class ColorProduct extends Model
 
     protected $table = "color_product";
 
-    //Relacion uno a mucos inversa
+    //Relacion uno a muchos inversa
 
     public function color(){
         return $this->belongsTo(Color::class);

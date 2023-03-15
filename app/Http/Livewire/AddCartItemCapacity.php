@@ -5,6 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\Capacity;
 use Livewire\Component;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Storage;
+
 class AddCartItemCapacity extends Component
 {
 
@@ -13,8 +16,28 @@ class AddCartItemCapacity extends Component
     public $qty = 1;
     public $quantity = 0;
     public $capacity_id = "";
-
+  
     public $colors = [];
+
+    public $options = [];
+
+    public function mount(){
+        $this->capacities = $this->product->capacity;
+        $this->options['image'] = Storage::url($this->product->images->first()->url);
+    }
+    
+    public function updatedCapacityId($value){
+        $capacity = Capacity::find($value);
+        $this->colors = $capacity->colors;
+        $this->options['capacity'] = $capacity->name;
+    }
+
+    public function updatedColorId($value){
+        $capacity = Capacity::find($this->capacity_id);
+        $color = $capacity->colors->find($value);
+        $this->quantity = qty_avalable($this->product->id, $color->id, $capacity->id);
+        $this->options['color'] = $color->name;
+    }
 
     public function decrement(){
         $this->qty = $this->qty - 1;
@@ -23,20 +46,24 @@ class AddCartItemCapacity extends Component
     public function increment(){
         $this->qty = $this->qty + 1;
     }
+
+    public function addItem(){
+        Cart::add(['id' => $this->product->id,
+        'name' => $this->product->name, 
+        'qty' => $this->qty, 
+        'price' => $this->product->price,
+        'weight' => 550,
+        'options' => $this->options
+    ]);
+
+    $this->quantity = qty_avalable($this->product->id, $this->color_id, $this->capacity_id);
+
+    $this->reset('qty');
+
+    $this->emitTo('dropdown-cart', 'render');
+    }
     
-    public function updatedCapacityId($value){
-        $capacity = Capacity::find($value);
-        $this->colors = $capacity->colors;
-    }
-
-    public function updatedColorId($value){
-        $capacity = Capacity::find($this->capacity_id);
-        $this->quantity = $capacity->colors->find($value)->pivot->quantity;
-    }
-
-    public function mount(){
-        $this->capacities = $this->product->capacity;
-    }
+  
 
     public function render()
     {
