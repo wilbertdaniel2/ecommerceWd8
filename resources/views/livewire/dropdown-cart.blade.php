@@ -27,7 +27,7 @@
                             {{--Con esta directiva pregunto si el campo color esta definido, si lo esta me lo agrega al carrito
                                 y si no, solamente lo ignora--}}
                             @isset($item->options['color'])
-                                <p class="mx-2">-Color: {{ __($item->options['color']) }}</p>
+                                <p class="mx-2">- Color: {{ __($item->options['color']) }}</p>
                             @endisset
 
                             @isset($item->options['capacity'])
