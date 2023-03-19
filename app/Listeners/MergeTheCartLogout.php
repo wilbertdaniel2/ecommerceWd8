@@ -31,7 +31,7 @@ class MergeTheCartLogout
     {
 
         //Eliminar registro
-        Cart::restore(auth()->user()->id);
+        Cart::deleteStoredCart(auth()->user()->id);
 
         //Nuevo registro
         Cart::store(auth()->user()->id);
