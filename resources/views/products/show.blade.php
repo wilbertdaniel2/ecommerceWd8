@@ -13,7 +13,11 @@
                         @endforeach
                         
                     </ul>
-                  </div>
+
+                    
+                </div>
+
+               {{--<div>hola</div>--}} 
             </div>
 
             <div>
@@ -55,6 +59,8 @@
 
                 @endif
             </div>
+
+        
         </div>
     </div>
     

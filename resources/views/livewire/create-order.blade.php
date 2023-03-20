@@ -125,7 +125,7 @@
                 <hr>
 
                 <p class="text-sm text-truegray mt-2">Al realizar esta compra, te riges a nuestras politicas, despues ira un link donde mostremos nuestras politicas y le 
-                    podemos colocar un enlace que lo lleve a ver detalladamente las politicas <a href="" class="font-semibold text-rojo-500">Politicas y provacidad</a>
+                    podemos colocar un enlace que lo lleve a ver detalladamente las politicas <a href="" class="font-semibold text-rojo-500">Politicas y privacidad</a>
                 </p>
             </div>
 
@@ -183,14 +183,24 @@
                 </p>
                 <p class="flex justify-between items-center">
                     Envio
-                    <span class="font-semibold">Gratis</span>
+                    <span class="font-semibold">
+                        @if ($envio_type == 1 || $shipping_cost == 0)
+                            Gratis
+                        @else
+                            {{$shipping_cost}} COP
+                        @endif
+                    </span>
                 </p>
 
                 <hr class="mt-4 mb-3">
 
                 <p class="flex justify-between items-center font-semibold">
                     <span class="text-lg">Total</span>
+                    @if ($envio_type == 1)
                     {{Cart::subtotal()}} COP
+                    @else
+                    {{Cart::subtotal() + $shipping_cost}} COP
+                    @endif
                 </p>
             </div>
         </div>
