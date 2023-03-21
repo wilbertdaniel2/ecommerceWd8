@@ -29,7 +29,8 @@
         
             <button aria-label="Previous" class="glider-prev">«</button>
             <button aria-label="Next" class="glider-next">»</button>
-            <div role="tablist" class="dots"></div>
+            {{--Con esta linea de codigo muestro los puntos debajo de las imagenes--}}
+            {{-- <div role="tablist" class="dots"></div> --}}
         </div>
 
     @else

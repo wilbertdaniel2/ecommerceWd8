@@ -25,6 +25,10 @@
         <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css')}}">
         @livewireStyles
 
+        {{--Slick--}}
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/slick/slick/slick.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/slick/slick/slick-theme.css')}}"/>
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -37,6 +41,12 @@
         {{--FlexSlider--}}
 
         <script src="{{ asset('vendor/FlexSlider/jquery.flexslider-min.js')}}"></script>
+
+        {{--SlickJs--}}
+        {{-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> --}}
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="{{asset('vendor/slick/slick/slick.min.js')}}"></script>
+
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
