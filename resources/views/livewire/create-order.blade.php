@@ -199,7 +199,7 @@
                     @if ($envio_type == 1)
                     {{Cart::subtotal()}} COP
                     @else
-                    {{Cart::subtotal() + $shipping_cost}} COP
+                    {{str_replace(',', '', Cart::subtotal()) + $shipping_cost}} COP
                     @endif
                 </p>
             </div>
