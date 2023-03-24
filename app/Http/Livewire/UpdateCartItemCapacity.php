@@ -20,7 +20,7 @@ class UpdateCartItemCapacity extends Component
         $color = Color::where('name', $item->options->color)->first();
         $capacity = Capacity::where('name', $item->options->capacity)->first();
 
-        $this->quantity = qty_avalable($item->id, $color->id, $capacity->id);
+        $this->quantity = qty_available($item->id, $color->id, $capacity->id);
     }
 
     public function decrement(){

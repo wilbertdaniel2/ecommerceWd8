@@ -26,8 +26,9 @@ class AddCartItemColor extends Component
     
     public function updatedColorId($value){
         $color = $this->product->colors->find($value);
-        $this->quantity = qty_avalable($this->product->id, $color->id);
+        $this->quantity = qty_available($this->product->id, $color->id);
         $this->options['color'] = $color->name;
+        $this->options['color_id'] = $color->id;
     }
 
     public function decrement(){
@@ -47,7 +48,7 @@ class AddCartItemColor extends Component
         'options' => $this->options
     ]);
 
-    $this->quantity = qty_avalable($this->product->id, $this->color_id);
+    $this->quantity = qty_available($this->product->id, $this->color_id);
 
     $this->reset('qty');
 

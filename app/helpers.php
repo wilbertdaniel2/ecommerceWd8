@@ -39,7 +39,72 @@ function qty_added($product_id, $color_id = null, $capacity_id = null){
     }
 }
 
-function qty_avalable($product_id, $color_id = null, $capacity_id = null){
+function qty_available($product_id, $color_id = null, $capacity_id = null){
 
     return quantity($product_id, $color_id, $capacity_id) - qty_added($product_id, $color_id, $capacity_id);
+}
+
+function discount($item){
+    $product = Product::find($item->id);
+    $qty_available = qty_available($item->id, $item->options->color_id, $item->options->capacity_id);
+
+
+    if ($item->options->capacity_id) {
+    
+        $capacity = Capacity::find($item->options->capacity_id);
+
+        $capacity->colors()->detach($item->options->color_id);
+
+        $capacity->colors()->attach([
+            $item->options->color_id => ['quantity' => $qty_available]
+        ]);
+
+    }elseif ($item->options->color_id) {
+        
+        $product->colors()->detach($item->options->color_id);
+
+        $product->colors()->attach([
+            $item->options->color_id => ['quantity' => $qty_available]
+        ]);
+
+    }else{
+
+        $product->quantity = $qty_available;
+
+        $product->save();
+
+    }
+}
+
+function increase($item){
+
+    $product = Product::find($item->id);
+    $quantity = quantity($item->id, $item->options->color_id, $item->options->capacity_id) + $item->qty;
+
+
+    if ($item->options->capacity_id) {
+    
+        $capacity = Capacity::find($item->options->capacity_id);
+
+        $capacity->colors()->detach($item->options->color_id);
+
+        $capacity->colors()->attach([
+            $item->options->color_id => ['quantity' => $quantity]
+        ]);
+
+    }elseif ($item->options->color_id) {
+        
+        $product->colors()->detach($item->options->color_id);
+
+        $product->colors()->attach([
+            $item->options->color_id => ['quantity' => $quantity]
+        ]);
+
+    }else{
+
+        $product->quantity = $quantity;
+
+        $product->save();
+
+    }
 }

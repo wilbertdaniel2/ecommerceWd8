@@ -14,7 +14,7 @@ class UpdateCartItem extends Component
         $item = Cart::get($this->rowId);
         $this->qty = $item->qty;
 
-        $this->quantity = qty_avalable($item->id);
+        $this->quantity = qty_available($item->id);
     }
 
     public function decrement(){

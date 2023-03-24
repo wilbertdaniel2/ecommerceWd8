@@ -30,13 +30,15 @@ class AddCartItemCapacity extends Component
         $capacity = Capacity::find($value);
         $this->colors = $capacity->colors;
         $this->options['capacity'] = $capacity->name;
+        $this->options['capacity_id'] = $capacity->id;
     }
 
     public function updatedColorId($value){
         $capacity = Capacity::find($this->capacity_id);
         $color = $capacity->colors->find($value);
-        $this->quantity = qty_avalable($this->product->id, $color->id, $capacity->id);
+        $this->quantity = qty_available($this->product->id, $color->id, $capacity->id);
         $this->options['color'] = $color->name;
+        $this->options['color_id'] = $color->id;
     }
 
     public function decrement(){
@@ -56,7 +58,7 @@ class AddCartItemCapacity extends Component
         'options' => $this->options
     ]);
 
-    $this->quantity = qty_avalable($this->product->id, $this->color_id, $this->capacity_id);
+    $this->quantity = qty_available($this->product->id, $this->color_id, $this->capacity_id);
 
     $this->reset('qty');
 
