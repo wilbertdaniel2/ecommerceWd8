@@ -33,7 +33,7 @@
                     </h1>
 
                     <a href="{{ route('categories.show', $category) }}"
-                        class="text-red hover:text-red400 hover:underline ml-2 font-semibold">Ver más</a>
+                        class="text-rojo-600 hover:text-rojo-400 hover:underline ml-2 font-semibold">Ver más</a>
                 </div>
 
 

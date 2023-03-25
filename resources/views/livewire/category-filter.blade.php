@@ -5,8 +5,8 @@
             <h1 class="font-semibold text-truegray uppercase">{{$category->name}}</h1>
 
             <div class="grid grid-cols-2 border border-gray divide-x-gray text-truegray">
-                <i class="fas fa-border-all p-3 cursor-pointer {{ $view == 'grid' ? 'text-red' : ''}}" wire:click="$set('view', 'grid')"></i>
-                <i class="fas fa-th-list p-3 cursor-pointer {{ $view == 'list' ? 'text-red' : ''}}" wire:click="$set('view', 'list')"></i>
+                <i class="fas fa-border-all p-3 cursor-pointer {{ $view == 'grid' ? 'text-rojo-600' : ''}}" wire:click="$set('view', 'grid')"></i>
+                <i class="fas fa-th-list p-3 cursor-pointer {{ $view == 'list' ? 'text-rojo-600' : ''}}" wire:click="$set('view', 'list')"></i>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
             <ul class="divide-y divide-gray">
                 @foreach ($category->subcategories as $subcategory)
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer hover:text-red capitalize {{ $subcategoria == $subcategory->name ? 'text-red font-semibold' : '' }}"
+                        <a class="cursor-pointer hover:text-rojo-600 capitalize {{ $subcategoria == $subcategory->name ? 'text-rojo-600 font-semibold' : '' }}"
                         wire:click="$set('subcategoria', '{{$subcategory->name}}')"
                         >{{$subcategory->name}}</a>
                     </li>

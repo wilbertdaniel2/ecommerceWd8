@@ -8,7 +8,7 @@
         <ul>
             @foreach ($category->subcategories as $subcategory)
                 <li>
-                    <a href="" class="text-truegray inline-block font-semibold py-1 px4 hover:text-red">
+                    <a href="" class="text-truegray inline-block font-semibold py-1 px4 hover:text-rojo-600">
                         {{$subcategory->name}}
                     </a>
                 </li>

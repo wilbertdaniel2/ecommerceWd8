@@ -1,6 +1,6 @@
 <header class="bg-zinc-400 sticky top-0 z-50" x-data="dropdown()">
     <div class="container flex items-center h-14 justify-between md:justify-start">
-        <a  :class="{'bg-opacity-100 text-red' : open}"
+        <a  :class="{'bg-opacity-100 text-rojo-600' : open}"
             x-on:click="show()"
             class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -95,7 +95,7 @@
     <nav id="navigation-menu" 
         x-show="open"
         :class="{'block': open , 'hidden': !open}"
-        class="bg-truegray bg-opacity-25 w-full absolute hidden">
+        class="bg-gray-700 bg-opacity-25 w-full absolute hidden">
 
         {{--Menu computadora--}}
         <div class="container h-full hidden md:block">
@@ -117,7 +117,7 @@
                                 {{$category->name}}
                             </a>
 
-                            <div class="navigation-submenu bg-gray absolute w-3/4 h-full top-0 right-0 hidden">
+                            <div class="navigation-submenu bg-gray-100 absolute w-3/4 h-full top-0 right-0 hidden">
                                 <x-navigation-subcategories :category="$category" />
                                 
                                 
@@ -127,7 +127,7 @@
                     @endforeach
 
                 </ul>
-                <div class="col-span-3 bg-gray">
+                <div class="col-span-3 bg-gray-100">
                     <x-navigation-subcategories :category="$categories->first()" />
                 </div>
             </div>
