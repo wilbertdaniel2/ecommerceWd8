@@ -23,6 +23,7 @@
 
         {{--FlexSlider--}}
         <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css')}}">
+
         @livewireStyles
 
         {{--Slick--}}
@@ -31,7 +32,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-
+  
         {{--Glider--}}
         <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 
@@ -46,7 +47,7 @@
         {{-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> --}}
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="{{asset('vendor/slick/slick/slick.min.js')}}"></script>
-
+        
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
