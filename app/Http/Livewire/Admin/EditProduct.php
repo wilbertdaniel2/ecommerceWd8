@@ -23,7 +23,7 @@ class EditProduct extends Component
         'category_id' => 'required',
         'product.subcategory_id' => 'required',
         'product.name' => 'required',
-        'product.slug' => 'required|unique:products,slug',
+        'slug' => 'required|unique:products,slug',
         'product.description' => 'required',
         'product.brand_id' => 'required',
         'product.price' => 'required',
@@ -48,7 +48,7 @@ class EditProduct extends Component
     }
 
     public function updatedProductName($value){
-        $this->product->slug = Str::slug($value);
+        $this->slug = Str::slug($value);
     }
 
     public function updatedCategoryId($value){
@@ -70,7 +70,7 @@ class EditProduct extends Component
 
     public function save(){
         $rules = $this->rules; 
-        $rules['product.slug'] = 'required|unique:products,slug,' . $this->product->id;
+        $rules['slug'] = 'required|unique:products,slug,' . $this->product->id;
 
         if ($this->product->subcategory_id) {
             if (!$this->subcategory->color &&

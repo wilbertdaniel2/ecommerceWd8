@@ -55,9 +55,9 @@
         <x-jet-label value="Slug" />
         <x-jet-input type="text" 
                      disabled class="w-full bg-gray-200" 
-                     wire:model="product.slug"
+                     wire:model="slug"
             placeholder="Ingrese el slug del producto" />
-        <x-jet-input-error for="product.slug" />
+        <x-jet-input-error for="slug" />
     </div>
 
 
@@ -128,8 +128,6 @@
         
     @endif
        
-
-    
 
     <div class="flex mt-4">
         <x-jet-button 
