@@ -33,7 +33,7 @@ class Product extends Model
     }
 
     //Relacion uno a muchos
-    public function capacity(){
+    public function capacities(){
         return $this->hasMany(Capacity::class);
     }
 
@@ -64,7 +64,7 @@ class Product extends Model
 
     //Relacion muchos a muchos
     public function colors(){
-        return $this->belongsToMany(color::class)->withPivot('quantity');
+        return $this->belongsToMany(color::class)->withPivot('quantity', 'id');
     }
 
     //Relacion uno a muchos polimorfica
