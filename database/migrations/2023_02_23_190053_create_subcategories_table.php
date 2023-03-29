@@ -25,10 +25,10 @@ class CreateSubcategoriesTable extends Migration
             */
             $table->boolean('color')->default(false);
             $table->boolean('capacity')->default(false);
-            $table->boolean('detail')->default(false);
-            $table->boolean('grid')->default(false);
-            $table->boolean('camera')->default(false);
-            $table->boolean('screen')->default(false);
+            // $table->boolean('detail')->default(false);
+            // $table->boolean('grid')->default(false);
+            // $table->boolean('camera')->default(false);
+            // $table->boolean('screen')->default(false);
 
 
             $table->unsignedBigInteger('category_id');

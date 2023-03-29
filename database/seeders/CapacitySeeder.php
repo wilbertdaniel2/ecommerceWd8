@@ -26,7 +26,7 @@ class CapacitySeeder extends Seeder
         foreach ($products as $product){
 
             foreach($capacities as $capacity){
-                $product->capacity()->create([
+                $product->capacities()->create([
                     'name' => $capacity
                 ]);
             }

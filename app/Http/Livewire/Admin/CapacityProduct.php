@@ -10,7 +10,9 @@ class CapacityProduct extends Component
 
     public $product, $name, $open = false;
 
-    public $name_edit;
+    public $capacity, $name_edit;
+
+    protected $listeners = ['delete'];
 
     protected $rules = [
         'name' => 'required'
@@ -23,13 +25,33 @@ class CapacityProduct extends Component
             'name' => $this->name
         ]);
 
+        $this->reset('name');
+
         $this->product = $this->product->fresh();
     }
 
     public function edit(Capacity $capacity){
         $this->open = true;
+        $this->capacity = $capacity;
 
         $this->name_edit = $capacity->name;
+    }
+
+    public function update(){
+        $this->validate([
+            'name_edit' => 'required'
+        ]);
+
+        $this->capacity->name = $this->name_edit;
+        $this->capacity->save();
+
+        $this->product = $this->product->fresh();
+        $this->open = false;
+    }
+
+    public function delete(Capacity $capacity){
+        $capacity->delete();
+        $this->product = $this->product->fresh();
     }
 
     public function render()

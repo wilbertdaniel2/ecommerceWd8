@@ -5,12 +5,12 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Color;
 use Livewire\Component;
 
-use App\Models\ColorProduct as Pivot;
+use App\Models\ColorCapacity as Pivot;
 
-class ColorProduct extends Component
+class ColorCapacity extends Component
 {
 
-    public $product, $colors, $color_id, $quantity, $open = false;
+    public $capacity, $colors, $color_id, $quantity, $open = false;
 
     public $pivot, $pivot_color_id, $pivot_quantity;
 
@@ -29,36 +29,40 @@ class ColorProduct extends Component
         $this->validate();
 
         $pivot = Pivot::where('color_id', $this->color_id)
-                    ->where('product_id', $this->product->id)
+                    ->where('capacity_id', $this->capacity->id)
                     ->first();
 
         if ($pivot) {
-
+            
             $pivot->quantity = $pivot->quantity + $this->quantity;
             $pivot->save();
 
         } else {
-            
-            $this->product->colors()->attach([
+
+            $this->capacity->colors()->attach([
                 $this->color_id => [
                     'quantity' => $this->quantity
                 ]
             ]);
             
         }
+        
 
         $this->reset(['color_id', 'quantity']);
 
         $this->emit('saved');
 
-        $this->product = $this->product->fresh();
+        $this->capacity = $this->capacity->fresh();
     }
 
     public function edit(Pivot $pivot){
+
         $this->open = true;
 
         $this->pivot = $pivot;
+
         $this->pivot_color_id = $pivot->color_id;
+
         $this->pivot_quantity = $pivot->quantity;
     }
 
@@ -68,21 +72,21 @@ class ColorProduct extends Component
 
         $this->pivot->save();
 
-        $this->product = $this->product->fresh();
+        $this->capacity = $this->capacity->fresh();
 
-        $this->open = false;
+        $this->reset('open');
     }
 
     public function delete(Pivot $pivot){
         $pivot->delete();
-        $this->product = $this->product->fresh();
+        $this->capacity = $this->capacity->fresh();
     }
 
     public function render()
     {
 
-        $product_colors = $this->product->colors;
+        $capacity_colors = $this->capacity->colors;
 
-        return view('livewire.admin.color-product', compact('product_colors'));
+        return view('livewire.admin.color-capacity', compact('capacity_colors'));
     }
 }

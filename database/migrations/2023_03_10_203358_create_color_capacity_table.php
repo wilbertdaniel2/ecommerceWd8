@@ -17,10 +17,11 @@ class CreateColorCapacityTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('color_id');
-            $table->foreign('color_id')->references('id')->on('colors');
+            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
 
             $table->unsignedBigInteger('capacity_id');
-            $table->foreign('capacity_id')->references('id')->on('capacities');
+            /*Si eliminamos la capacidad a la cual hace referencia tambien se eliminan los registros de esta tabla intermedia con el onDelete('cascade')*/
+            $table->foreign('capacity_id')->references('id')->on('capacities')->onDelete('cascade');
 
             $table->integer('quantity');
 
