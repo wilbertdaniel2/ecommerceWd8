@@ -57,8 +57,13 @@
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 w-10 h-10">
-                                        <img class="w-10 h-10 rounded-full object-cover"
-                                            src="{{ Storage::url($product->images->first()->url) }}" alt="">
+                                        @if ($product->images->count())
+                                                <img class="h-10 w-10 rounded-full object-cover"
+                                                    src="{{ Storage::url($product->images->first()->url) }}" alt="">
+                                            @else
+                                                <img class="h-10 w-10 rounded-full object-cover"
+                                                    src="{{ asset('img/noPhoto.jpg') }}" alt="">
+                                            @endif
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-sm font-medium leading-5 text-gray-900">
