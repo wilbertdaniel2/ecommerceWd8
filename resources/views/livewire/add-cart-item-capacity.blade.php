@@ -11,6 +11,13 @@
         </select>
     </div>
 
+    {{-- <pre>
+        @php
+            var_dump($capacities);
+            echo $product->id;
+        @endphp
+    </pre> --}}
+
     <div class="mt-2">
         <p class="text-xl text-truegray">
             Color:

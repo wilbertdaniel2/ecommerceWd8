@@ -22,7 +22,7 @@ class AddCartItemCapacity extends Component
     public $options = [];
 
     public function mount(){
-        $this->capacities = $this->product->capacity;
+        $this->capacities = $this->product->capacities;
         $this->options['image'] = Storage::url($this->product->images->first()->url);
     }
     
