@@ -18,7 +18,7 @@ class CreateSubcategoriesTable extends Migration
 
             $table->string('name');
             $table->string('slug');
-            $table->string('image');
+            
 
             /*El valor por defecto sera falso, dado el caso de que no se especifique un valor
             para alguno de estos campos se dara a entender de que estos campos no son necesarios
@@ -32,7 +32,7 @@ class CreateSubcategoriesTable extends Migration
 
 
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
 
 

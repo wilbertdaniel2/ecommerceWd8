@@ -8,6 +8,7 @@ use App\Http\Livewire\Admin\EditProduct;
 
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Livewire\Admin\ShowCategory;
 
 Route::get('/', ShowProducts::class)->name('admin.index');
 
@@ -18,3 +19,6 @@ Route::get('products/{product}/edit', EditProduct::class)->name('admin.products.
 Route::post('products/{product}/files', [ProductController::class, 'files'])->name('admin.products.files');
 
 Route::get('categories', [CategoryController::class, 'index'])->name('admin.categories.index');
+
+Route::get('categories/{category}', ShowCategory::class)->name('admin.categories.show');
+

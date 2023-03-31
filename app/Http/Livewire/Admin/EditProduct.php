@@ -84,11 +84,7 @@ class EditProduct extends Component
 
         if ($this->product->subcategory_id) {
             if (!$this->subcategory->color &&
-            !$this->subcategory->capacity &&
-            !$this->subcategory->detail &&
-            !$this->subcategory->screen &&
-            !$this->subcategory->camera &&
-            !$this->subcategory->grid) {
+            !$this->subcategory->capacity) {
                 $rules['product.quantity'] = 'required|numeric';
             }
         }
