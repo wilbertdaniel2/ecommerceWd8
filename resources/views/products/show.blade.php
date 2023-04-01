@@ -29,7 +29,7 @@
                 </div>   
                 
                 <p class="text-2xl font-semibold text-truegray my-4">
-                   COP {{ $product->price }}
+                   COP {{ number_format($product->price) }}
                 </p>
 
                 <div class="bg-white rounded-lg shadow-lg mb-6">

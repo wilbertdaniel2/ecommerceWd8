@@ -19,7 +19,7 @@
                                         {{Str::limit($product->name, 20)}} {{--Con esta linea de codigo estoy limitando a que solo se muestre los primeros 20 caracteres del nombre del producto--}}
                                     </a>
                                 </h1>
-                                <p class="font-bold text-truegray">COL$ {{$product->price}}</p>
+                                <p class="font-bold text-truegray">COL$ {{number_format($product->price)}}</p>
                             </div>        
                     </article>
                 </li>
@@ -35,9 +35,16 @@
 
     @else
         {{--Spiner de carga, puede ser modificado en un futuro dependiendo del gusto--}}
-        <div class="mb-4 h-48 flex justify-center items-center bg-white shadow-xl border border-gray-100 rounded-lg">
-            <div class="rounded animate-spin ease duration-300 w-10 h-10 border-2 border-indigo-500"></div>
-        </div>	    
+        <div class="flex items-center justify-center">
+            <div
+              class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              role="status">
+              <span
+                class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >Loading...</span
+              >
+            </div>
+          </div>	    
 
     @endif
  
