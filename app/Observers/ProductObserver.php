@@ -10,22 +10,25 @@ class ProductObserver
         $subcategory_id = $product->subcategory_id;
         $subcategory = Subcategory::find($subcategory_id);
 
-        if ($subcategory->size) {
+        if ($subcategory->capacity) {
+
             if ($product->colors->count()) {
                 $product->colors()->detach();
             }
+            
         }elseif ($subcategory->color) {
-            if ($product->capacities()->count()) {
-                foreach ($product->capacities as $capacity) {
+            if ($product->capacities->count()) {
+                foreach ($product->sizes as $capacity) {
                     $capacity->delete();
                 }
             }
-        }else {
+        }else{
             if ($product->colors->count()) {
                 $product->colors()->detach();
             }
+
             if ($product->capacities()->count()) {
-                foreach ($product->capacities as $capacity) {
+                foreach ($product->capacities() as $capacity) {
                     $capacity->delete();
                 }
             }

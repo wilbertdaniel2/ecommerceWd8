@@ -21,6 +21,7 @@ class ColorProduct extends Component
         'quantity' => 'required|numeric'
     ];
 
+
     public function mount(){
         $this->colors = Color::all();
     }
@@ -52,7 +53,9 @@ class ColorProduct extends Component
         $this->emit('saved');
 
         $this->product = $this->product->fresh();
+
     }
+
 
     public function edit(Pivot $pivot){
         $this->open = true;
@@ -61,6 +64,7 @@ class ColorProduct extends Component
         $this->pivot_color_id = $pivot->color_id;
         $this->pivot_quantity = $pivot->quantity;
     }
+
 
     public function update(){
         $this->pivot->color_id = $this->pivot_color_id;

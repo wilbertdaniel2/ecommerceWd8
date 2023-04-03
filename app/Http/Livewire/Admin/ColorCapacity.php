@@ -14,6 +14,7 @@ class ColorCapacity extends Component
 
     public $pivot, $pivot_color_id, $pivot_quantity;
 
+
     protected $listeners = ['delete'];
 
     protected $rules = [
@@ -28,25 +29,24 @@ class ColorCapacity extends Component
     public function save(){
         $this->validate();
 
+
         $pivot = Pivot::where('color_id', $this->color_id)
                     ->where('capacity_id', $this->capacity->id)
                     ->first();
 
         if ($pivot) {
-            
+
             $pivot->quantity = $pivot->quantity + $this->quantity;
             $pivot->save();
-
-        } else {
+            
+        }else{
 
             $this->capacity->colors()->attach([
                 $this->color_id => [
                     'quantity' => $this->quantity
                 ]
             ]);
-            
         }
-        
 
         $this->reset(['color_id', 'quantity']);
 
@@ -60,13 +60,17 @@ class ColorCapacity extends Component
         $this->open = true;
 
         $this->pivot = $pivot;
-
         $this->pivot_color_id = $pivot->color_id;
-
         $this->pivot_quantity = $pivot->quantity;
     }
 
     public function update(){
+
+        $this->validate([
+            'pivot_color_id' => 'required',
+            'pivot_quantity' => 'required',
+        ]);
+
         $this->pivot->color_id = $this->pivot_color_id;
         $this->pivot->quantity = $this->pivot_quantity;
 
