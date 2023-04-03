@@ -8,6 +8,8 @@
     "white": "Blanco",
     "blue": "Azul",
     "red": "Rojo",
-    "black": "Negro"
-
+    "black": "Negro",
+    "Already registered?": "¿Ya estas registrado?",
+    "Register": "Registrarse",
+    "Confirm Password": "Confirma contraseña"
 }

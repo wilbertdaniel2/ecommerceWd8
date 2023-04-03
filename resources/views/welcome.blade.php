@@ -1,14 +1,14 @@
 <x-app-layout>
 
-    <div class="one-time">
-        <div><img src="{{ asset('img/img1.png') }}" class="w-full" alt=""></div>
-        <div><img src="{{ asset('img/img2.jpg') }}" class="w-full" alt=""></div>
-        <div><img src="{{ asset('img/img3.png') }}" class="w-full" alt=""></div>
-    </div>
+    
 
     <div class="container py-8">
 
-
+        <div class="one-time">
+            <div><img src="{{ asset('img/img1.png') }}" class="w-full" alt=""></div>
+            <div><img src="{{ asset('img/img2.jpg') }}" class="w-full" alt=""></div>
+            <div><img src="{{ asset('img/img3.png') }}" class="w-full" alt=""></div>
+        </div>
 
 
         {{-- <div class="mb-6">

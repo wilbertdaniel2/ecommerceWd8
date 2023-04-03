@@ -99,7 +99,7 @@
 
                             </td>
                             <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap">
-                                {{$product->price}}
+                                {{number_format($product->price)}}
                             </td>
                             <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
                                 <a href="{{ route('admin.products.edit', $product) }}" class="text-rojo-600 hover:text-rojo-900">Editar</a>

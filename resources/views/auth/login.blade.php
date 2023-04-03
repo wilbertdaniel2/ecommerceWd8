@@ -40,7 +40,7 @@
                 @endif --}}
 
                 <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    <a class="underline text-sm font-semibold text-gray-800 hover:text-gray-900" href="{{ route('register') }}">
                         {{ __('¿Aun no tienes una cuenta? Registrate!') }}
                     </a>
     
