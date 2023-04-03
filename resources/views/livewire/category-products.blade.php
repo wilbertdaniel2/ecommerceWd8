@@ -9,9 +9,11 @@
                 <li class="bg-white rounded-lg shadow {{ $loop->last ? '' : 'sm:mr-4' }}">
                         
                     <article>
+                        <a href="{{route('products.show', $product)}}">
                             <figure>
                                 <img class="h-48 w-full object-cover object-center" src="{{Storage::url($product->images->first()->url)}}" alt="">
                             </figure>
+                        </a>    
 
                             <div class="py-4 px-6">
                                 <h1 class="text-lg font-semibold">
