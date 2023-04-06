@@ -12,10 +12,13 @@ use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Livewire\Admin\ShowCategory;
 
+use App\Http\Livewire\Admin\DepartmentComponent;
+use App\Http\Livewire\Admin\ShowDepartment;
 
 
 
 use App\Http\Livewire\Admin\BrandComponent;
+
 
 Route::get('/', ShowProducts::class)->name('admin.index');
 
@@ -33,3 +36,5 @@ Route::get('categories/{category}', ShowCategory::class)->name('admin.categories
 
 Route::get('brands', BrandComponent::class)->name('admin.brands.index');
 
+Route::get('departments', DepartmentComponent::class)->name('admin.departments.index');
+Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');
