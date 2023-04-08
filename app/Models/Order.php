@@ -22,12 +22,12 @@ class Order extends Model
         return $this->belongsTo(Department::class);
     }
 
-    public function city(){
-        return $this->belongsTo(City::class);
+    public function municipality(){
+        return $this->belongsTo(Municipality::class);
     }
 
-    public function district(){
-        return $this->belongsTo(District::class);
+    public function neighborhood(){
+        return $this->belongsTo(Neighborhood::class);
     }
 
     public function user(){

@@ -53,7 +53,7 @@
                             @else
                                 <p class="text-sm">Los productos seran enviados a:</p>
                                 <p>{{ $order->address }}</p>
-                                <p>{{ $order->department->name }} - {{ $order->city->name }} - {{ $order->district->name }}</p>
+                                <p>{{ $order->department->name }} - {{ $order->municipality->name }} - {{ $order->neighborhood->name }}</p>
                             @endif
                         </div>
                         <div>

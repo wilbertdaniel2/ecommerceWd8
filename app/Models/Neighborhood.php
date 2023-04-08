@@ -5,15 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class Neighborhood extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'cost', 'department_id'];
-
-    public function districts(){
-       return $this->hasMany(District::class); 
-    }
+    protected $fillable = ['name', 'city_id'];
 
     public function orders(){
         return $this->HasMany(Order::class);

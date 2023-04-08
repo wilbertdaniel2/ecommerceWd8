@@ -65,36 +65,36 @@
                         <x-jet-input-error for="department_id" />
                     </div>
 
-                    {{--Ciudades--}}
+                    {{--Municipios--}}
                     <div>
-                        <x-jet-label value="Ciudad"/>
+                        <x-jet-label value="Municipio"/>
 
-                        <select class="form-control w-full" wire:model="city_id">
+                        <select class="form-control w-full" wire:model="municipality_id">
 
-                            <option value="" disabled selected>Selecione una ciudad</option>
+                            <option value="" disabled selected>Selecione un municipio</option>
 
-                            @foreach ($cities as $city)
-                                <option value="{{$city->id}}">{{$city->name}}</option>
+                            @foreach ($municipalities as $municipality)
+                                <option value="{{$municipality->id}}">{{$municipality->name}}</option>
                             @endforeach
                         </select>
 
-                        <x-jet-input-error for="city_id" />
+                        <x-jet-input-error for="municipality_id" />
                     </div>
 
-                    {{--Distritos--}}
+                    {{--Barrios--}}
                     <div>
-                        <x-jet-label value="Distrito"/>
+                        <x-jet-label value="Barrio"/>
 
-                        <select class="form-control w-full" wire:model="district_id">
+                        <select class="form-control w-full" wire:model="neighborhood_id">
 
-                            <option value="" disabled selected>Selecione un distrito</option>
+                            <option value="" disabled selected>Selecione un barrio</option>
 
-                            @foreach ($districts as $district)
-                                <option value="{{$district->id}}">{{$district->name}}</option>
+                            @foreach ($neighborhoods as $neighborhood)
+                                <option value="{{$neighborhood->id}}">{{$neighborhood->name}}</option>
                             @endforeach
                         </select>
 
-                        <x-jet-input-error for="district_id" />
+                        <x-jet-input-error for="neighborhood_id" />
                     </div>
 
                     <div>
@@ -176,13 +176,13 @@
 
             <hr class="mt-4 mb-3">
 
-            <div class="text-truegray">
+            <div class="text-gray-700">
                 <p class="flex justify-between items-center">
                     Subtotal
                     <span class="font-semibold">{{Cart::subtotal()}} COP</span>
                 </p>
                 <p class="flex justify-between items-center">
-                    Envio
+                    Envío
                     <span class="font-semibold">
                         @if ($envio_type == 1 || $shipping_cost == 0)
                             Gratis
@@ -197,14 +197,12 @@
                 <p class="flex justify-between items-center font-semibold">
                     <span class="text-lg">Total</span>
                     @if ($envio_type == 1)
-                    {{Cart::subtotal()}} COP
+                        {{Cart::subtotal()}} COP
                     @else
-                    {{str_replace(',', '', Cart::subtotal()) + $shipping_cost}} COP
+                        {{str_replace(',', '', Cart::subtotal()) + $shipping_cost}} COP
                     @endif
                 </p>
             </div>
         </div>
-            
-
     </div>
 </div>

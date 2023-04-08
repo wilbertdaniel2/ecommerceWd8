@@ -2,10 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\City;
+
 use Livewire\Component;
 use App\Models\Department;
-use App\Models\District;
+use App\Models\Neighborhood;
+use App\Models\Municipality;
 use App\Models\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -14,13 +15,13 @@ class CreateOrder extends Component
 
     public $envio_type = 1;
 
-    public $contact, $phone ,$address, $references, $shipping_cost = 0;
+    public $contact, $phone, $address, $references, $shipping_cost = 0;
 
-    public $departments, $cities= [], $districts = [];
+    public $departments, $municipalities = [], $neighborhoods = [];
 
-    public $department_id = "", $city_id = "", $district_id = "";
+    public $department_id = "", $municipality_id = "", $neighborhood_id = "";
 
-    public $rules= [
+    public $rules = [
         'contact' => 'required',
         'phone' => 'required',
         'envio_type' => 'required'
@@ -30,33 +31,33 @@ class CreateOrder extends Component
         $this->departments = Department::all();
     }
 
-    public function updatedEnviotype($value){
-        if ($value == 1){
+    public function updatedEnvioType($value){
+        if ($value == 1) {
             $this->resetValidation([
-                'department_id',
-                'city_id',
-                'district_id',
-                'address',
-                'references'
+                'department_id', 'municipality_id', 'neighborhood_id', 'address', 'references'
             ]);
         }
-    }
+    }  
+
 
     public function updatedDepartmentId($value){
+        $this->municipalities = Municipality::where('department_id', $value)->get();
 
-        $city = City::find($value);
-
-        $this->shipping_cost = $city->cost;
-
-        $this->cities = City::where('department_id', $value)->get();
-
-        $this->reset(['city_id', 'district_id']);
+        $this->reset(['municipality_id', 'neighborhood_id']);
     }
 
-    public function updatedCityId($value){
-        $this->districts = District::where('city_id', $value)->get();
-        $this->reset('district_id');
+
+    public function updatedMunicipalityId($value){
+
+        $municipality = Municipality::find($value);
+
+        $this->shipping_cost = $municipality->cost;
+
+        $this->neighborhoods = Neighborhood::where('municipality_id', $value)->get();
+
+        $this->reset('neighborhood_id');
     }
+
 
     public function create_order(){
 
@@ -64,8 +65,8 @@ class CreateOrder extends Component
 
         if($this->envio_type == 2){
             $rules ['department_id'] = 'required';
-            $rules ['city_id'] = 'required';
-            $rules ['district_id'] = 'required';
+            $rules ['municipality_id'] = 'required';
+            $rules ['neighborhood_id'] = 'required';
             $rules ['address'] = 'required';
             $rules ['references'] = 'required';
         }
@@ -86,8 +87,8 @@ class CreateOrder extends Component
         if ($this->envio_type == 2) {
             $order->shipping_cost = $this->shipping_cost;
             $order->department_id = $this->department_id;
-            $order->city_id = $this->city_id;
-            $order->district_id = $this->district_id;
+            $order->municipality_id = $this->municipality_id;
+            $order->neighborhood_id = $this->neighborhood_id;
             $order->address = $this->address;
             $order->references = $this->references;
         }
