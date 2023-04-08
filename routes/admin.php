@@ -12,12 +12,12 @@ use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Livewire\Admin\ShowCategory;
 
-use App\Http\Livewire\Admin\DepartmentComponent;
-use App\Http\Livewire\Admin\ShowDepartment;
-
-
 use App\Http\Livewire\Admin\BrandComponent;
-use App\Http\Livewire\Admin\CityComponent;
+
+use App\Http\Livewire\Admin\ShowDepartment;
+use App\Http\Livewire\Admin\DepartmentComponent;
+
+use App\Http\Livewire\Admin\MunicipalityComponent;
 
 Route::get('/', ShowProducts::class)->name('admin.index');
 
@@ -38,4 +38,4 @@ Route::get('brands', BrandComponent::class)->name('admin.brands.index');
 Route::get('departments', DepartmentComponent::class)->name('admin.departments.index');
 Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');
 
-Route::get('cities/{city}', CityComponent::class)->name('admin.cities.show');
+Route::get('municipalities/{municipality}', MunicipalityComponent::class)->name('admin.municipalities.show');

@@ -71,7 +71,7 @@
 
                         <select class="form-control w-full" wire:model="municipality_id">
 
-                            <option value="" disabled selected>Selecione un municipio</option>
+                            <option value="" disabled selected>Selecione un municipio, ciudad o localidad</option>
 
                             @foreach ($municipalities as $municipality)
                                 <option value="{{$municipality->id}}">{{$municipality->name}}</option>
@@ -158,7 +158,7 @@
                             
                         </div>
 
-                        <p>COP {{$item->price}}</p>
+                        <p>COP {{number_format($item->price)}}</p>
                     </article>
                 </li>
 
@@ -187,7 +187,7 @@
                         @if ($envio_type == 1 || $shipping_cost == 0)
                             Gratis
                         @else
-                            {{$shipping_cost}} COP
+                            {{number_format($shipping_cost)}} COP
                         @endif
                     </span>
                 </p>

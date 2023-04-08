@@ -28,7 +28,7 @@
                         Marcas
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href=" {{route('admin.departments.index')}} " :active="request()->routeIs('admin.departments.index')">
+                    <x-jet-nav-link href=" {{route('admin.departments.index')}} " :active="request()->routeIs('admin.departments.*')">
                         Departamentos
                     </x-jet-nav-link>
 
@@ -155,11 +155,11 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href=" {{route('admin.index')}} " :active="request()->routeIs('admin.index')">
-                productos
+                Productos
             </x-jet-responsive-nav-link>
 
             <x-jet-responsive-nav-link href=" {{route('admin.orders.index')}} " :active="request()->routeIs('admin.orders.*')">
-                Categorias
+                Ordenes
             </x-jet-responsive-nav-link>
 
             <x-jet-responsive-nav-link href=" {{route('admin.categories.index')}} " :active="request()->routeIs('admin.categories.*')">
@@ -170,7 +170,7 @@
                 Marcas
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href=" {{route('admin.departments.index')}} " :active="request()->routeIs('admin.departments.index')">
+            <x-jet-responsive-nav-link href=" {{route('admin.departments.index')}} " :active="request()->routeIs('admin.departments.*')">
                 Departamentos
             </x-jet-responsive-nav-link>
 

@@ -13,8 +13,8 @@ class Department extends Model
     protected $fillable = ['name'];
 
     //Relacion uno a muchos
-    public function cities(){
-        return $this->hasMany(City::class);
+    public function municipalities(){
+        return $this->hasMany(Municipality::class);
     }
 
     public function orders(){

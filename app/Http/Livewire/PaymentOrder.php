@@ -13,24 +13,28 @@ class PaymentOrder extends Component
 
     public $order;
 
-    // protected $listeners = ['payOrdes'];
+    // protected $listeners = ['payOrder'];
 
     public function mount(Order $order){
         $this->order = $order;
     }
 
-    public function payOrder(){
-        $this->order->status = 2;
-        $this->order->save();
-    }
+    // public function payOrder(){
+    //     $this->order->status = 2;
+    //     $this->order->save();
+
+    //     return redirect()->route('orders.show', $this->order);
+    // }
 
     public function render()
     {
+        
         $this->authorize('author', $this->order);
         $this->authorize('payment', $this->order);
-        
-        $items = json_decode($this->order->content);
 
-        return view('livewire.payment-order', compact('items'));
+        $items = json_decode($this->order->content);
+        $envio = json_decode($this->order->envio);
+
+        return view('livewire.payment-order', compact('items', 'envio'));
     }
 }

@@ -10,11 +10,11 @@
         <x-jet-form-section submit="save" class="mb-6">
     
             <x-slot name="title">
-                Agregar una nueva ciudad
+                Agregar un nuevo municipio, capital o localidad
             </x-slot>
     
             <x-slot name="description">
-                Complete la información necesaria para poder agregar un nueva ciudad
+                Complete la información necesaria para poder agregar un nuevo municipio, capital o localidad
             </x-slot>
     
             <x-slot name="form">
@@ -42,7 +42,7 @@
             <x-slot name="actions">
     
                 <x-jet-action-message class="mr-3" on="saved">
-                    Ciudad agregada
+                    Municipio agregado
                 </x-jet-action-message>
     
                 <x-jet-button>
@@ -51,14 +51,14 @@
             </x-slot>
         </x-jet-form-section>
     
-        {{-- Mostrar Departamentos --}}
+        {{-- Mostrar municipios, departamentos o localidades --}}
         <x-jet-action-section>
             <x-slot name="title">
-                Lista de ciudades
+                Lista de municipios, capital o localidades
             </x-slot>
     
             <x-slot name="description">
-                Aquí encontrará todas las ciudades agregadas
+                Aquí encontrará todas los municipios, capital o localidades agregados
             </x-slot>
     
             <x-slot name="content">
@@ -72,18 +72,18 @@
                     </thead>
     
                     <tbody class="divide-y divide-gray-300">
-                        @foreach ($cities as $city)
+                        @foreach ($municipalities as $municipality)
                             <tr>
                                 <td class="py-2">
     
-                                    <a href="{{route('admin.cities.show', $city)}}" class="uppercase underline hover:text-blue-600">
-                                        {{$city->name}}
+                                    <a href="{{route('admin.municipalities.show', $municipality)}}" class="uppercase underline hover:text-blue-600">
+                                        {{$municipality->name}}
                                     </a>
                                 </td>
                                 <td class="py-2">
                                     <div class="flex divide-x divide-gray-300 font-semibold">
-                                        <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$city}})">Editar</a>
-                                        <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteCity', {{$city->id}})">Eliminar</a>
+                                        <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$municipality}})">Editar</a>
+                                        <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="$emit('deleteMunicipality', {{$municipality->id}})">Eliminar</a>
                                     </div>
                                 </td>
                             </tr>
@@ -98,7 +98,7 @@
         <x-jet-dialog-modal wire:model="editForm.open">
     
             <x-slot name="title">
-                Editar departamento
+                Editar municipio
             </x-slot>
     
             <x-slot name="content">
@@ -140,7 +140,7 @@
 
     @push('script')
         <script>
-            Livewire.on('deleteCity', cityId => {
+            Livewire.on('deleteMunicipality', municipalityId => {
             
                 Swal.fire({
                     title: 'Are you sure?',
@@ -153,7 +153,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
 
-                        Livewire.emitTo('admin.show-department', 'delete', cityId)
+                        Livewire.emitTo('admin.show-department', 'delete', municipalityId)
 
                         Swal.fire(
                             'Deleted!',

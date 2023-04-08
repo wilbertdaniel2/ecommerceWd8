@@ -1,20 +1,20 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight capitalize">
-            Ciudad: {{$city->name}}
+            Municipio, capital o localidad: {{$municipality->name}}
         </h2>
     </x-slot>
 
     <div class="container py-12">
-        {{-- Agregar distrito --}}
+        {{-- Agregar barrio --}}
         <x-jet-form-section submit="save" class="mb-6">
     
             <x-slot name="title">
-                Agregar una nueva distrito
+                Agregar un nuevo barrio
             </x-slot>
     
             <x-slot name="description">
-                Complete la información necesaria para poder agregar un nuevo distrito
+                Complete la información necesaria para poder agregar un nuevo barrio
             </x-slot>
     
             <x-slot name="form">
@@ -33,7 +33,7 @@
             <x-slot name="actions">
     
                 <x-jet-action-message class="mr-3" on="saved">
-                    Distrito agregado
+                    Barrio agregado
                 </x-jet-action-message>
     
                 <x-jet-button>
@@ -45,11 +45,11 @@
         {{-- Mostrar Departamentos --}}
         <x-jet-action-section>
             <x-slot name="title">
-                Lista de distritos
+                Lista de barrios
             </x-slot>
     
             <x-slot name="description">
-                Aquí encontrará todas los distritos agregados
+                Aquí encontrará todas los barrios agregados
             </x-slot>
     
             <x-slot name="content">
@@ -63,19 +63,19 @@
                     </thead>
     
                     <tbody class="divide-y divide-gray-300">
-                        @foreach ($districts as $district)
+                        @foreach ($neighborhoods as $neighborhood)
                             <tr>
                                 <td class="py-2">
     
-                                    {{$district->name}}
-                                    {{-- <a href="{{route('admin.districts.show', $district)}}" class="uppercase underline hover:text-blue-600">
-                                        {{$district->name}}
+                                    {{$neighborhood->name}}
+                                    {{-- <a href="{{route('admin.neighborhoods.show', $neighborhood)}}" class="uppercase underline hover:text-blue-600">
+                                        {{$neighborhood->name}}
                                     </a> --}}
                                 </td>
                                 <td class="py-2">
                                     <div class="flex divide-x divide-gray-300 font-semibold">
-                                        <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$district}})">Editar</a>
-                                        <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteDistrict', {{$district->id}})">Eliminar</a>
+                                        <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$neighborhood}})">Editar</a>
+                                        <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="$emit('deleteNeighborhood', {{$neighborhood->id}})">Eliminar</a>
                                     </div>
                                 </td>
                             </tr>
@@ -122,7 +122,7 @@
 
     @push('script')
         <script>
-            Livewire.on('deleteDistrict', districtId => {
+            Livewire.on('deleteNeighborhood', neighborhoodId => {
             
                 Swal.fire({
                     title: 'Are you sure?',
@@ -135,7 +135,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
 
-                        Livewire.emitTo('admin.city-component', 'delete', districtId)
+                        Livewire.emitTo('admin.municipality-component', 'delete', neighborhoodId)
 
                         Swal.fire(
                             'Deleted!',

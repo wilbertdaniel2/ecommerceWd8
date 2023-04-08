@@ -35,17 +35,19 @@ class CreateOrdersTable extends Migration
 
             $table->json('content');
 
-            $table->unsignedBigInteger('department_id')->nullable();
-            $table->foreign('department_id')->references('id')->on('departments');
+            // $table->unsignedBigInteger('department_id')->nullable();
+            // $table->foreign('department_id')->references('id')->on('departments');
 
-            $table->unsignedBigInteger('municipality_id')->nullable();
-            $table->foreign('municipality_id')->references('id')->on('municipalities');
+            // $table->unsignedBigInteger('municipality_id')->nullable();
+            // $table->foreign('municipality_id')->references('id')->on('municipalities');
 
-            $table->unsignedBigInteger('neighborhood_id')->nullable();
-            $table->foreign('neighborhood_id')->references('id')->on('neighborhoods');
+            // $table->unsignedBigInteger('neighborhood_id')->nullable();
+            // $table->foreign('neighborhood_id')->references('id')->on('neighborhoods');
 
-            $table->string('address')->nullable();
-            $table->string('references')->nullable();
+            // $table->string('address')->nullable();
+            // $table->string('references')->nullable();
+
+            $table->json('envio')->nullable();
 
             $table->timestamps();
         });

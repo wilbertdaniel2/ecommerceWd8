@@ -43,24 +43,28 @@
                 </div>
         
                 <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                    <div class="grid grid-cols-2 gap-6 text-truegray">
+                    <div class="grid grid-cols-2 gap-6 text-gray-700">
                         <div>
-                            <p class="text-lg font-semibold uppercase">Envio</p>
-        
+                            <p class="text-lg font-semibold uppercase">Envío</p>
+    
                             @if ($order->envio_type == 1)
-                                <p class="text-sm">Los productos deben ser recogidos en tienda</p>
-                                <p>Calle falsa 123</p>
-                            @else
-                                <p class="text-sm">Los productos seran enviados a:</p>
-                                <p>{{ $order->address }}</p>
-                                <p>{{ $order->department->name }} - {{ $order->municipality->name }} - {{ $order->neighborhood->name }}</p>
-                            @endif
+                            <p class="text-sm">Los productos deben ser recogidos en tienda</p>
+                            <p class="text-sm">Calle falsa 123</p>
+                        @else
+                            <p class="text-sm">Los productos Serán enviados a:</p>
+                            <p class="text-sm">{{ $envio->address }}</p>
+                            <p>{{ $envio->department }} - {{ $envio->municipality }} - {{ $envio->neighborhood }}
+                            </p>
+                        @endif
+    
+    
                         </div>
+    
                         <div>
                             <p class="text-lg font-semibold uppercase">Datos de contacto</p>
-        
-                            <p class="text-sm">Persona que recibira el producto: {{ $order->contact }}</p>
-                            <p class="text-sm">Telefono de contacto: {{ $order->phone }}</p>
+    
+                            <p class="text-sm">Persona que recibirá el producto: {{ $order->contact }}</p>
+                            <p class="text-sm">Teléfono de contacto: {{ $order->phone }}</p>
                         </div>
                     </div>
                 </div>
@@ -169,6 +173,7 @@
                 render: {
                     container: '.cho-container', //Indica donde se mostrara el boton de pago
                     label: 'Pagar', // cambia el texto del boton de pago (opcional)
+                    
                 }
             });
         </script>

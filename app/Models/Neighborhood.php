@@ -9,7 +9,7 @@ class Neighborhood extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'city_id'];
+    protected $fillable = ['name', 'municipality_id'];
 
     public function orders(){
         return $this->HasMany(Order::class);

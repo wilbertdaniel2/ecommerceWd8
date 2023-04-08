@@ -36,7 +36,7 @@
                             
                         </div>
 
-                        <p>COP {{$item->price}}</p>
+                        <p>COP {{number_format($item->price)}}</p>
                     </article>
                 </li>
 
