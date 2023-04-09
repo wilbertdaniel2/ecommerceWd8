@@ -21,7 +21,7 @@
                                         {{Str::limit($product->name, 20)}} {{--Con esta linea de codigo estoy limitando a que solo se muestre los primeros 20 caracteres del nombre del producto--}}
                                     </a>
                                 </h1>
-                                <p class="font-bold text-truegray">COL$ {{number_format($product->price)}}</p>
+                                <p class="font-bold text-truegray">COP {{number_format($product->price)}}</p>
                             </div>        
                     </article>
                 </li>

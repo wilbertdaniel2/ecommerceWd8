@@ -65,7 +65,7 @@
                                         </a>
                                     </h1>
 
-                                    <p class="font-bold text-trueGray-700">US$ {{ $product->price }}</p>
+                                    <p class="font-bold text-trueGray-700">COP$ {{number_format($product->price) }}</p>
                                 </div>
                             </article>
                         </li>
