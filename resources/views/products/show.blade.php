@@ -35,11 +35,11 @@
 
                 <div class="bg-white rounded-lg shadow-lg mb-6">
                     <div class="p-4 flex items-center">
-                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-red">
+                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-rojo-600">
                             <i class="fas fa-truck text-sm text-white"></i>
                         </span>
                         <div class="ml-4">
-                            <p class="text-lg font-semibold text-red">Se hacen envios a todo el atlántico</p>
+                            <p class="text-lg font-semibold text-rojo-600">Se hacen envios a todo el atlántico</p>
                             <p>Recibelo el {{ Date::now()->addDay(7)->locale('es')->format('l j F') }}</p>
                         </div>
                     </div>
@@ -59,6 +59,26 @@
                 @livewire('add-cart-item', ['product' => $product])
 
                 @endif
+
+                <div class="bg-white rounded-lg shadow-lg mt-6">
+                    <div class="p-4 flex items-center">
+                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-rojo-600">
+                            <i class="fas fa-shield-alt text-sm text-white"></i>
+                        </span>
+                        <div class="ml-4">
+                            <a href="/" class="underline text-lg font-semibold text-rojo-600">Protección al comprador</a>                          
+                        </div>
+                    </div>
+
+                    <div class="p-4 flex items-center">
+                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-rojo-600">
+                            <i class="fas fa-phone-alt text-sm text-white"></i>
+                        </span>
+                        <div class="ml-4">
+                            <a href="/" class="underline text-lg font-semibold text-rojo-600">Comuniquese con nosotros</a>                          
+                        </div>
+                    </div>
+                </div>
             </div>
 
         
