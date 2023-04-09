@@ -19,6 +19,8 @@ use App\Http\Livewire\Admin\DepartmentComponent;
 
 use App\Http\Livewire\Admin\MunicipalityComponent;
 
+Use App\Http\Livewire\Admin\UserComponent;
+
 Route::get('/', ShowProducts::class)->name('admin.index');
 
 Route::get('products/create', CreateProduct::class)->name('admin.products.create');
@@ -39,3 +41,5 @@ Route::get('departments', DepartmentComponent::class)->name('admin.departments.i
 Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');
 
 Route::get('municipalities/{municipality}', MunicipalityComponent::class)->name('admin.municipalities.show');
+
+Route::get('users', UserComponent::class)->name('admin.users.index');
