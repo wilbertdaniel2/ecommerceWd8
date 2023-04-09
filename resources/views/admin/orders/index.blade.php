@@ -2,7 +2,7 @@
 
     <div class="container py-12">
 
-        <section class="grid grid-cols-4 gap-6 text-white">
+        <section class="grid md:grid-cols-4 gap-6 text-white">
            
             <a href=" {{route('admin.orders.index') . "?status=2" }} " class="bg-zinc-500 bg-opacity-75 rounded-lg px-12 pt-8 pb-4">
                 <p class="text-center text-2xl">
