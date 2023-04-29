@@ -31,7 +31,7 @@ class CreateOrdersTable extends Migration
 
             $table->float('shipping_cost');
 
-            $table->float('total');
+            $table->float('total', 20);
 
             $table->json('content');
 
