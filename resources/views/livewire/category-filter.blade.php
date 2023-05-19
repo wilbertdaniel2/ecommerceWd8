@@ -51,12 +51,18 @@
                     @forelse ($products as $product)
                         <li class="bg-white rounded-lg shadow">
                             <article>
-                                <a href="{{ route('products.show', $product) }}">
-                                    <figure>
-                                        <img class="h-48 w-full object-cover object-center"
-                                            src="{{ Storage::url($product->images->first()->url) }}" alt="">
-                                    </figure>
-                                </a>
+
+                                @if ($product->images->count())
+                                    <a href="{{ route('products.show', $product) }}">
+                                        <figure>
+                                            <img class="h-48 w-full object-cover object-center"
+                                                src="{{ Storage::url($product->images->first()->url) }}" alt="">
+                                        </figure>
+                                    </a>
+                                @else
+                                    <img class="h-10 w-10 rounded-full object-cover"
+                                        src="{{ asset('img/noPhoto.jpg') }}" alt="">
+                                @endif    
 
                                 <div class="py-4 px-6">
                                     <h1 class="text-lg font-semibold">

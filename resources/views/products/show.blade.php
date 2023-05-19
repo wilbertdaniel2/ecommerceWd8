@@ -4,6 +4,7 @@
             <div>
                 <div class="flexslider">
                     <ul class="slides">
+                        @if ($product->images->count())
                         @foreach ($product->images as $image)
 
                             <li data-thumb="{{ Storage::url($image->url) }}">
@@ -11,6 +12,10 @@
                             </li>
 
                         @endforeach
+                        @else
+                        <img class="h-10 w-10 rounded-full object-cover"
+                            src="{{ asset('img/noPhoto.jpg') }}" alt="">
+                    @endif  
                         
                     </ul>      
                 </div>
