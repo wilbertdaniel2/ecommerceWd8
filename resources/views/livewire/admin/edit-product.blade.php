@@ -22,10 +22,13 @@
             Complete esta informacion para crear un producto
         </h1>
 
-        <div class="mb-4" wire:ignore>
+        <div class="mb-2" wire:ignore>
             <form action="{{ route('admin.products.files', $product) }}" method="POST" class="dropzone"
                 id="my-awesome-dropzone"></form>
         </div>
+
+        <p class="mb-4">La imagen debe ser menor a 2 mb de lo contrario el sistema no permitira subir dicha imagen. 
+            <b>Recomendacion</b>, el formato de la imagen debe ser jpg, para una buena visualizacion del producto la imagen debe ser 600x600</p>
 
         @if ($product->images->count())
 

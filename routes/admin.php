@@ -14,6 +14,8 @@ use App\Http\Livewire\Admin\ShowCategory;
 
 use App\Http\Livewire\Admin\BrandComponent;
 
+use App\Http\Livewire\Admin\ColorComponent;
+
 use App\Http\Livewire\Admin\ShowDepartment;
 use App\Http\Livewire\Admin\DepartmentComponent;
 
@@ -36,6 +38,8 @@ Route::get('categories', [CategoryController::class, 'index'])->name('admin.cate
 Route::get('categories/{category}', ShowCategory::class)->name('admin.categories.show');
 
 Route::get('brands', BrandComponent::class)->name('admin.brands.index');
+
+Route::get('colors', ColorComponent::class)->name('admin.colors.index');
 
 Route::get('departments', DepartmentComponent::class)->name('admin.departments.index');
 Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');
