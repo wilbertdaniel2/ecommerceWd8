@@ -27,8 +27,10 @@
                 id="my-awesome-dropzone"></form>
         </div>
 
-        <p class="mb-4">La imagen debe ser menor a 2 mb de lo contrario el sistema no permitira subir dicha imagen. 
-            <b>Recomendacion</b>, el formato de la imagen debe ser jpg, para una buena visualizacion del producto la imagen debe ser 600x600</p>
+        <p class="mb-4"><b>Recomendacion</b>, la imagen debe ser menor a 2 mb de lo contrario el sistema no permitira subir dicha imagen. 
+            El formato de la imagen debe ser jpg, para una buena visualizacion del producto la imagen debe ser 600x600, Si el producto aun
+        no tiene imagenes, el estado del producto debe ser siempre "Borrador"</p>
+
 
         @if ($product->images->count())
 
