@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight capitalize">
-            Municipio, capital o localidad: {{$municipality->name}}
+            Municipio, capital o localidad: {{strtoupper($municipality->name)}}
         </h2>
     </x-slot>
 
@@ -67,7 +67,7 @@
                             <tr>
                                 <td class="py-2">
     
-                                    {{$neighborhood->name}}
+                                    {{ strtoupper($neighborhood->name)}}
                                     {{-- <a href="{{route('admin.neighborhoods.show', $neighborhood)}}" class="uppercase underline hover:text-blue-600">
                                         {{$neighborhood->name}}
                                     </a> --}}

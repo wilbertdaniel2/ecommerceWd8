@@ -60,7 +60,7 @@
                             <td class="py-2">
 
                                 <a href="{{route('admin.departments.show', $department)}}" class="uppercase underline hover:text-blue-600">
-                                    {{$department->name}}
+                                    {{strtoupper($department->name)}}
                                 </a>
                             </td>
                             <td class="py-2">

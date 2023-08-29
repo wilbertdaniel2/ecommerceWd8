@@ -33,7 +33,7 @@ class MunicipalityComponent extends Component
     }
 
     public function getNeighborhoods(){
-        $this->neighborhoods = Neighborhood::where('municipality_id', $this->municipality->id)->get();
+        $this->neighborhoods = Neighborhood::where('municipality_id', $this->municipality->id)->orderBy('name')->get();
     }
 
     public function save(){
