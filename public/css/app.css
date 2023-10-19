@@ -1149,14 +1149,14 @@ select {
 .z-50 {
   z-index: 50;
 }
-.order-last {
-  order: 9999;
-}
 .order-1 {
   order: 1;
 }
 .order-2 {
   order: 2;
+}
+.order-last {
+  order: 9999;
 }
 .col-span-2 {
   grid-column: span 2 / span 2;
@@ -1166,9 +1166,6 @@ select {
 }
 .col-span-6 {
   grid-column: span 6 / span 6;
-}
-.col-span-1 {
-  grid-column: span 1 / span 1;
 }
 .\!-m-px {
   margin: -1px !important;
@@ -1388,6 +1385,9 @@ select {
 .h-full {
   height: 100%;
 }
+.h-auto {
+  height: auto;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1562,9 +1562,6 @@ select {
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -1847,6 +1844,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
+.bg-rojo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
 .bg-tahiti-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity));
@@ -1870,10 +1871,6 @@ select {
 .bg-zinc-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-.bg-rojo-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 .bg-opacity-100 {
   --tw-bg-opacity: 1;
@@ -2581,6 +2578,10 @@ select {
   opacity: 0.25;
 }
 
+.group:hover .group-hover\:opacity-75 {
+  opacity: 0.75;
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   @keyframes spin {
@@ -2704,6 +2705,10 @@ select {
 
   .sm\:w-10 {
     width: 2.5rem;
+  }
+
+  .sm\:w-auto {
+    width: auto;
   }
 
   .sm\:w-full {
@@ -2869,6 +2874,10 @@ select {
     width: 14rem;
   }
 
+  .md\:w-auto {
+    width: auto;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2917,12 +2926,12 @@ select {
     order: 2;
   }
 
-  .lg\:col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-
   .lg\:col-span-1 {
     grid-column: span 1 / span 1;
+  }
+
+  .lg\:col-span-4 {
+    grid-column: span 4 / span 4;
   }
 
   .lg\:-mx-8 {
@@ -2938,8 +2947,12 @@ select {
     display: flex;
   }
 
-  .lg\:grid {
-    display: grid;
+  .lg\:w-auto {
+    width: auto;
+  }
+
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-4 {
@@ -2948,10 +2961,6 @@ select {
 
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .lg\:justify-between {
@@ -2978,8 +2987,8 @@ select {
     grid-column: span 3 / span 3;
   }
 
-  .xl\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .xl\:w-auto {
+    width: auto;
   }
 
   .xl\:grid-cols-5 {
