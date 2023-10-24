@@ -49,32 +49,40 @@
 
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @forelse ($products as $product)
-                        <li class="bg-white rounded-lg shadow">
                             <article>
 
+                                
                                 @if ($product->images->count())
                                     <a href="{{ route('products.show', $product) }}">
-                                        <figure>
-                                            <img class="h-48 w-full object-cover object-center"
-                                                src="{{ Storage::url($product->images->first()->url) }}" alt="">
-                                        </figure>
+                                        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                                            <img src="{{ Storage::url($product->images->first()->url) }}"
+                                                alt=""
+                                                class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                        </div>
                                     </a>
                                 @else
-                                    <img class="h-10 w-10 rounded-full object-cover"
+                                    <img class="h-40 w-40 object-center object-cover"
                                         src="{{ asset('img/noPhoto.jpg') }}" alt="">
                                 @endif    
 
                                 <div class="py-4 px-6">
-                                    <h1 class="text-lg font-semibold">
-                                        <a href="{{ route('products.show', $product) }}">
-                                            {{ Str::limit($product->name, 20) }}
-                                        </a>
-                                    </h1>
+                                    <h3 class="mt-2 text-lg font-semibold text-gray-700">{{ Str::limit($product->name, 20) }}</h3>
 
-                                    <p class="font-bold text-trueGray-700">COP$ {{number_format($product->price) }}</p>
+                                    <p class="mt-1 text-lg font-medium text-gray-900">$ {{number_format($product->price) }}</p>
                                 </div>
+
+
+                                {{-- <a href="{{ route('products.show', $product) }}" class="mr-4">
+                                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                                        <img src="{{ Storage::url($product->images->first()->url) }}"
+                                            alt=""
+                                            class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                    </div>
+                                    <h3 class="mt-4 text-lg font-semibold text-gray-700">{{ Str::limit($product->name, 20) }}</h3>
+                                    <p class="mt-1 text-lg font-medium text-gray-900">$ {{ number_format($product->price) }}</p>
+                                </a> --}}
                             </article>
-                        </li>
+                        
 
                     @empty
                         <li class="md:col-span-2 lg:col-span-4">
