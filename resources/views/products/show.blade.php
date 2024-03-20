@@ -51,7 +51,7 @@
                 </div>
                 
                 {{--Aqui condiciono la informacion que quiero mostrar dependiendo del producto--}}
-                @if ($product->subcategory->capacity)
+                {{-- @if ($product->subcategory->capacity)
 
                     @livewire('add-cart-item-capacity', ['product' => $product])
 
@@ -63,9 +63,18 @@
 
                 @livewire('add-cart-item', ['product' => $product])
 
-                @endif
+                @endif --}}
 
                 <div class="bg-white rounded-lg shadow-lg mt-6">
+
+                    <div class="p-4 flex items-center">
+                        <div class="ml-4">
+                            <a href="https://api.whatsapp.com/send?phone=53161377&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}" target="_blank">
+                                <img src="{{ asset('img/contraEntrega.jpg') }}" alt="Contactar por WhatsApp">
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="p-4 flex items-center">
                         <span class="flex items-center justify-center h-10 w-10 rounded-full bg-rojo-600">
                             <i class="fas fa-shield-alt text-sm text-white"></i>
