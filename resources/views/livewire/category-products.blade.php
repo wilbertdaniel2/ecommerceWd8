@@ -55,6 +55,15 @@
             {{-- Con esta linea de codigo muestro los puntos debajo de las imagenes --}}
             {{-- <div role="tablist" class="dots"></div> --}}
         </div>
+
+            {{--Boton de whatsapp--}}
+        <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+            <span style="font-size: 16px; margin-right: 10px;">Contáctanos!</span>
+            <a href="https://api.whatsapp.com/send?phone=53161377&text=HOLA,%20QUISIERA%20CONSULTAR%20SOBRE%20TUS%20PRODUCTOS" target="_blank" rel="noopener noreferrer">
+                <img src="{{ asset('img/logo-wasap.png') }}" alt="WhatsApp" style="width: 70px; height: 70px; border-radius: 50%; background-color: #25d366;">
+            </a>
+        </div>
+        
     @else
         {{-- Spiner de carga, puede ser modificado en un futuro dependiendo del gusto --}}
         <div class="flex items-center justify-center">
@@ -66,5 +75,6 @@
         </div>
 
     @endif
+
 
 </div>
