@@ -16,6 +16,10 @@
                         Productos
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href=" {{route('admin.covers.index')}} " :active="request()->routeIs('admin.covers.*')">
+                        Publicidades
+                    </x-jet-nav-link>
+
                     <x-jet-nav-link href=" {{route('admin.colors.index')}} " :active="request()->routeIs('admin.colors.*')">
                         Colores
                     </x-jet-nav-link>
@@ -39,7 +43,6 @@
                     <x-jet-nav-link href=" {{route('admin.users.index')}} " :active="request()->routeIs('admin.users.index')">
                         Usuarios
                     </x-jet-nav-link>
-
                 </div>
             </div>
 
@@ -164,6 +167,10 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href=" {{route('admin.index')}} " :active="request()->routeIs('admin.index')">
                 Productos
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href=" {{route('admin.covers.index')}} " :active="request()->routeIs('admin.covers.*')">
+                Publicidades
             </x-jet-responsive-nav-link>
 
             <x-jet-responsive-nav-link href=" {{route('admin.colors.index')}} " :active="request()->routeIs('admin.colors.*')">

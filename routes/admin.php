@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\OrderController;
 
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\Admin\CoverController;
 use App\Http\Livewire\Admin\ShowCategory;
 
 use App\Http\Livewire\Admin\BrandComponent;
@@ -47,3 +48,10 @@ Route::get('departments/{department}', ShowDepartment::class)->name('admin.depar
 Route::get('municipalities/{municipality}', MunicipalityComponent::class)->name('admin.municipalities.show');
 
 Route::get('users', UserComponent::class)->name('admin.users.index');
+
+
+Route::get('covers', [CoverController::class, 'index'])->name('admin.covers.index');
+Route::get('covers/create', [CoverController::class, 'create'])->name('admin.covers.create');
+Route::post('covers/store', [CoverController::class, 'store'])->name('admin.covers.store');
+Route::get('covers/{cover}/edit', [CoverController::class, 'edit'])->name('admin.covers.edit');
+Route::put('covers/{cover}', [CoverController::class, 'update'])->name('admin.covers.update');
