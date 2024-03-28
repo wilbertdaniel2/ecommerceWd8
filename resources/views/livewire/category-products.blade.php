@@ -56,13 +56,68 @@
             {{-- <div role="tablist" class="dots"></div> --}}
         </div>
 
-            {{--Boton de whatsapp--}}
-        <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-            <span style="font-size: 16px; margin-right: 10px;">Contáctanos!</span>
-            <a href="https://api.whatsapp.com/send?phone=53161377&text=HOLA,%20QUISIERA%20CONSULTAR%20SOBRE%20TUS%20PRODUCTOS" target="_blank" rel="noopener noreferrer">
-                <img src="{{ asset('img/logo-wasap.png') }}" alt="WhatsApp" style="width: 70px; height: 70px; border-radius: 50%; background-color: #25d366;">
+
+        <style>
+            .float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #37d45e;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 3px #999;
+                z-index: 100;
+            }
+
+            .float:hover {
+                text-decoration: none;
+                color: #FFF;
+                background-color: #2a8a52;
+
+                animation: shake 1s;
+
+
+                animation-iteration-count: infinite;
+            }
+
+            .my-float {
+                margin-top: 16px;
+            }
+
+            .pulse {
+                animation: pulse-animation 2s infinite;
+            }
+
+
+            @keyframes pulse-animation {
+                0% {
+                    box-shadow: 0 0 0 0px #25d36657 rgba(0, 0, 0, 0.2);
+                }
+
+                100% {
+                    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+                }
+            }
+        </style>
+
+        {{-- Boton de whatsapp --}}
+        <div style="position: fixed; bottom: 20px; right: 20px;">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+            <a href="https://api.whatsapp.com/send?phone=53161377&text=HOLA,%20QUISIERA%20CONSULTAR%20SOBRE%20TUS%20PRODUCTOS"
+                class="float pulse" target="_blank">
+                <i class="fa fa-whatsapp my-float "></i>
             </a>
         </div>
+
+        {{-- Mensaje "Contáctanos" --}}
+        <div style="position: fixed; bottom: 90px; right: 20px; background-color: black; color: white; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+            Contáctanos!
+        </div>
+        
         
     @else
         {{-- Spiner de carga, puede ser modificado en un futuro dependiendo del gusto --}}

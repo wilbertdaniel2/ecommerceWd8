@@ -5,8 +5,8 @@
     <div class="container py-8">
 
         <div class="one-time">
-            <div><img src="{{ asset('img/img1.png') }}" class="w-full" alt=""></div>
-            <div><img src="{{ asset('img/img2.jpg') }}" class="w-full" alt=""></div>
+            <div><img src="{{ asset('img/publi1.jpg') }}" class="w-full" alt=""></div>
+            <div><img src="{{ asset('img/publi2.jpg') }}" class="w-full" alt=""></div>
         </div>
 
 
