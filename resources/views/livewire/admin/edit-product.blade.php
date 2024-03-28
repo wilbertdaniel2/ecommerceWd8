@@ -144,9 +144,17 @@
                     <x-jet-input-error for="product.brand_id" />
                 </div>
 
+                {{-- Precio antes--}}
+                <div>
+                    <x-jet-label value="Precio original" />
+                    <x-jet-input wire:model="product.false_price" type="number" class="w-full" step=".01" />
+
+                    <x-jet-input-error for="product.false_price" />
+                </div>
+
                 {{-- Precio --}}
                 <div>
-                    <x-jet-label value="Precio" />
+                    <x-jet-label value="Precio con descuento" />
                     <x-jet-input wire:model="product.price" type="number" class="w-full" step=".01" />
 
                     <x-jet-input-error for="product.price" />

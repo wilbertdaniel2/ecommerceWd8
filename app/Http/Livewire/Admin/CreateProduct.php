@@ -16,7 +16,7 @@ class CreateProduct extends Component
 
     public $categories, $subcategories = [], $brands = [];
     public $category_id = "", $subcategory_id= "", $brand_id = "";
-    public $name, $slug, $description, $price, $quantity;
+    public $name, $slug, $description, $price, $false_price, $quantity;
 
     protected $rules = [
         'category_id' => 'required',
@@ -25,7 +25,8 @@ class CreateProduct extends Component
         'slug' => 'required|unique:products',
         'description' => 'required',
         'brand_id' => 'required',
-        'price' => 'required'
+        'price' => 'required',
+        'false_price' => 'required'
     ];
 
     public function updatedCategoryId($value){
@@ -70,6 +71,7 @@ class CreateProduct extends Component
         $product->slug = $this->slug;
         $product->description = $this->description;
         $product->price = $this->price;
+        $product->false_price = $this->false_price;
         $product->subcategory_id = $this->subcategory_id;
         $product->brand_id = $this->brand_id;
         if ($this->subcategory_id) {

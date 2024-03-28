@@ -43,6 +43,7 @@
                             <h3 class="mt-2 text-lg font-semibold text-gray-700">{{ Str::limit($product->name, 20) }}
                             </h3>
 
+                            <p class="mt-1 text-sm font-medium text-gray-900"><del>Antes: $ {{ number_format($product->false_price) }}</del></p>
                             <p class="mt-1 text-lg font-medium text-gray-900">$ {{ number_format($product->price) }}</p>
                         </div>
 
@@ -114,7 +115,7 @@
         </div>
 
         {{-- Mensaje "Contáctanos" --}}
-        <div style="position: fixed; bottom: 90px; right: 20px; background-color: black; color: white; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+        <div style="position: fixed; bottom: 90px; right: 20px; background-color: black; color: white; padding: 10px; border-radius: 5px; margin-bottom: 20px; z-index: 999;">
             Contáctanos!
         </div>
         

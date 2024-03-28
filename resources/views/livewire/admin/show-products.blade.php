@@ -45,7 +45,11 @@
                         </th>
                         <th
                             class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-                            Precio
+                             Precio antes
+                        </th>
+                        <th
+                            class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
+                            Precio con descuento
                         </th>
                         <th class="px-6 py-3 bg-gray-50"></th>
                     </tr>
@@ -97,6 +101,9 @@
                                     @default
                                 @endswitch
 
+                            </td>
+                            <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap">
+                                {{number_format($product->false_price)}}
                             </td>
                             <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap">
                                 {{number_format($product->price)}}

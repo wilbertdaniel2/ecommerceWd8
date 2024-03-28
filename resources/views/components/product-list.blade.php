@@ -12,7 +12,8 @@
                                 <div class="lg:flex justify-between">
                                     <div>
                                         <h1 class="text-lg font-semibold text-truegray">{{$product->name}}</h1>
-                                        <p class="font-bold text-truegray">COP {{number_format($product->price)}}</p>
+                                        <p class="font-bold text-sm text-gray-500"><del>Antes: $ {{number_format($product->false_price)}}</del></p>
+                                        <p class="font-bold text-truegray">$ {{number_format($product->price)}}</p>
                                     </div>
 
                                     <div class="flex items-center">
