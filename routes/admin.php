@@ -16,13 +16,13 @@ use App\Http\Livewire\Admin\ShowCategory;
 use App\Http\Livewire\Admin\BrandComponent;
 
 use App\Http\Livewire\Admin\ColorComponent;
-
+use App\Http\Livewire\Admin\CreateCover;
 use App\Http\Livewire\Admin\ShowDepartment;
 use App\Http\Livewire\Admin\DepartmentComponent;
 
 use App\Http\Livewire\Admin\MunicipalityComponent;
 
-Use App\Http\Livewire\Admin\UserComponent;
+use App\Http\Livewire\Admin\UserComponent;
 
 Route::get('/', ShowProducts::class)->name('admin.index');
 
@@ -31,6 +31,8 @@ Route::get('products/create', CreateProduct::class)->name('admin.products.create
 Route::get('products/{product}/edit', EditProduct::class)->name('admin.products.edit');
 
 Route::post('products/{product}/files', [ProductController::class, 'files'])->name('admin.products.files');
+
+Route::get('covers', CreateCover::class)->name('admin.covers.index');
 
 Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
 Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
@@ -50,8 +52,8 @@ Route::get('municipalities/{municipality}', MunicipalityComponent::class)->name(
 Route::get('users', UserComponent::class)->name('admin.users.index');
 
 
-Route::get('covers', [CoverController::class, 'index'])->name('admin.covers.index');
-Route::get('covers/create', [CoverController::class, 'create'])->name('admin.covers.create');
-Route::post('covers/store', [CoverController::class, 'store'])->name('admin.covers.store');
-Route::get('covers/{cover}/edit', [CoverController::class, 'edit'])->name('admin.covers.edit');
-Route::put('covers/{cover}', [CoverController::class, 'update'])->name('admin.covers.update');
+// Route::get('covers', [CoverController::class, 'index'])->name('admin.covers.index');
+// Route::get('covers/create', [CoverController::class, 'create'])->name('admin.covers.create');
+// Route::post('covers/store', [CoverController::class, 'store'])->name('admin.covers.store');
+// Route::get('covers/{cover}/edit', [CoverController::class, 'edit'])->name('admin.covers.edit');
+// Route::put('covers/{cover}', [CoverController::class, 'update'])->name('admin.covers.update');

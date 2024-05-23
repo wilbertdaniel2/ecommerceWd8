@@ -59,29 +59,35 @@ class CreateCategory extends Component
         'editForm.brands' => 'marcas'
     ];
 
-    public function mount(){
+    public function mount()
+    {
         $this->getBrands();
         $this->getCategories();
         $this->rand = rand();
     }
 
-    public function updatedCreateFormName($value){
+    public function updatedCreateFormName($value)
+    {
         $this->createForm['slug'] = Str::slug($value);
     }
 
-    public function updatedEditFormName($value){
+    public function updatedEditFormName($value)
+    {
         $this->editForm['slug'] = Str::slug($value);
     }
 
-    public function getBrands(){
+    public function getBrands()
+    {
         $this->brands = Brand::all();
     }
 
-    public function getCategories(){
+    public function getCategories()
+    {
         $this->categories = Category::all();
     }
 
-    public function save(){
+    public function save()
+    {
         $this->validate();
 
 
@@ -105,12 +111,13 @@ class CreateCategory extends Component
         $this->emit('saved');
     }
 
-    public function edit(Category $category){
+    public function edit(Category $category)
+    {
 
         $this->reset(['editImage']);
         $this->resetValidation();
         $this->category = $category;
-        
+
         $this->editForm['open'] = true;
         $this->editForm['name'] = $category->name;
         $this->editForm['slug'] = $category->slug;
@@ -119,7 +126,8 @@ class CreateCategory extends Component
         $this->editForm['brands'] = $category->brands->pluck('id');
     }
 
-    public function update(){
+    public function update()
+    {
 
         $rules = [
             'editForm.name' => 'required',
@@ -137,7 +145,7 @@ class CreateCategory extends Component
         if ($this->editImage) {
             Storage::delete($this->editForm['image']);
             $this->editForm['image'] = $this->editImage->store('categories');
-        } 
+        }
 
         $this->category->update($this->editForm);
 
@@ -148,7 +156,8 @@ class CreateCategory extends Component
         $this->getCategories();
     }
 
-    public function delete(Category $category){
+    public function delete(Category $category)
+    {
         $category->delete();
         $this->getCategories();
     }
