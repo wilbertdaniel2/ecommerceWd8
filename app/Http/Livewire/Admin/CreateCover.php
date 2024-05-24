@@ -3,9 +3,9 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Cover;
+use Carbon\Carbon;
 use Livewire\Component;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 
 class CreateCover extends Component
@@ -26,6 +26,7 @@ class CreateCover extends Component
     ];
 
     public $editForm = [
+        'open' => false,
         'image_path' => false,
         'title' => null,
         'start_at' => null,
@@ -36,10 +37,10 @@ class CreateCover extends Component
     public $editImage;
 
     protected $rules = [
-        'createForm.image_path' => 'required|image|max:1024',
+        'createForm.image_path' => 'required|image|dimensions:min_width=1476,min_height=348|max:1024',
         'createForm.title' => 'required',
-        'createForm.start_at' => 'required|unique:categories,slug',
-        'createForm.end_at' => 'required',
+        'createForm.start_at' => 'required|date',
+        //'createForm.end_at' => 'required',
         'createForm.is_active' => 'required'
     ];
 
@@ -109,29 +110,32 @@ class CreateCover extends Component
         $this->emit('saved');
     }
 
-    public function edit(Cover $cover)
+    public function edit($coverId)
     {
 
         $this->reset(['editImage']);
         $this->resetValidation();
-        $this->cover = $cover;
-
+        $this->cover = Cover::findOrFail($coverId);
+        //dd($this->cover);
+        //dd($this->editForm['open']);
         $this->editForm['open'] = true;
-        $this->editForm['name'] = $category->name;
-        $this->editForm['slug'] = $category->slug;
-        $this->editForm['icon'] = $category->icon;
-        $this->editForm['image'] = $category->image;
-        $this->editForm['brands'] = $category->brands->pluck('id');
+        $this->editForm['image_path'] = $this->cover->image_path;
+        $this->editForm['title'] = $this->cover->title;
+        $this->editForm['start_at'] = Carbon::createFromDate($this->cover->start_at)->isoFormat('Y-MM-DD');
+        $this->editForm['end_at'] = Carbon::createFromDate($this->cover->end_at)->isoFormat('Y-MM-DD');
+        $this->editForm['is_active'] = $this->cover->is_active;
+
+        //$this->editForm['brands'] = $category->brands->pluck('id');
     }
 
     public function update()
     {
 
         $rules = [
-            'editForm.name' => 'required',
-            'editForm.slug' => 'required|unique:categories,slug,' . $this->category->id,
-            'editForm.icon' => 'required',
-            'editForm.brands' => 'required',
+            'editForm.title' => 'required',
+            'editForm.start_at' => 'required',
+            'editForm.end_at' => 'required',
+            'editForm.is_active' => 'required',
         ];
 
         if ($this->editImage) {
@@ -141,23 +145,23 @@ class CreateCover extends Component
         $this->validate($rules);
 
         if ($this->editImage) {
-            Storage::delete($this->editForm['image']);
-            $this->editForm['image'] = $this->editImage->store('categories');
+            Storage::delete($this->editForm['image_path']);
+            $this->editForm['image_path'] = $this->editImage->store('covers');
         }
 
-        $this->category->update($this->editForm);
+        $this->cover->update($this->editForm);
 
-        $this->category->brands()->sync($this->editForm['brands']);
+        // $this->cover->brands()->sync($this->editForm['brands']);
 
         $this->reset(['editForm', 'editImage']);
 
-        $this->getCategories();
+        $this->getCovers();
     }
 
-    public function delete(Category $category)
+    public function delete(Cover $cover)
     {
-        $category->delete();
-        $this->getCategories();
+        $cover->delete();
+        $this->getCovers();
     }
 
     public function render()

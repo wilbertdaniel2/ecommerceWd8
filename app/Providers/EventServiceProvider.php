@@ -42,5 +42,6 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         Product::observe(ProductObserver::class);
+        \App\Models\Cover::observe(\App\Observers\CoverObserver::class);
     }
 }
