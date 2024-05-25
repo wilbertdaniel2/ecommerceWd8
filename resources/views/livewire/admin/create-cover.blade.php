@@ -62,7 +62,7 @@
 
                 <div class="mt-5">
                     <p>
-                        La imagen seleccionada para la publicidad debe tener las siguientes medidas, ancho: 1476 x alto: 348
+                        La imagen seleccionada para la publicidad debe tener las siguientes medidas, ancho: 1903 x alto: 564
                     </p>
                 </div>
 

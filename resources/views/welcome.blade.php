@@ -1,29 +1,38 @@
 <x-app-layout>
 
-    
+    <div class="">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach ($covers as $cover)
+                    <div class="swiper-slide">
+                        <img src="{{ Storage::url($cover->image_path) }}"
+                            class="w-full object-cover object-center" alt="">
+                    </div>
+                @endforeach
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
 
     <div class="container py-8">
 
-        <div class="one-time">
+
+
+        {{-- <div class="one-time">
             <div><img src="{{ asset('img/publi1.jpg') }}" class="w-full" alt=""></div>
             <div><img src="{{ asset('img/publi2.jpg') }}" class="w-full" alt=""></div>
-        </div>
-
-
-        {{-- <div class="mb-6">
-            <div class="glider-contain">
-                <div class="glider2">
-                  <div><img src="{{asset('img/img1.png')}}" class="w-full" alt=""></div>
-                  <div><img src="{{asset('img/img1.png')}}" class="w-full" alt=""></div>
-                  <div><img src="{{asset('img/img1.png')}}" class="w-full" alt=""></div>
-                  <div><img src="{{asset('img/img1.png')}}" class="w-full" alt=""></div>
-                </div>
-              
-                <button aria-label="Previous" class="glider-prev">«</button>
-                <button aria-label="Next" class="glider-next">»</button>
-                <div role="tablist" class="dots"></div>
-              </div>
         </div> --}}
+
         @foreach ($categories as $category)
             <section class="mb-6">
                 <div class="flex items-center mb-2">
@@ -87,26 +96,44 @@
 
             });
 
-            // new Glider(document.querySelector('.glider2'), {
-            //     slidesToShow: 1,
-            //     dots: '#dots',
-            //     draggable: true,
-            //     autoplay: true,
-            //     autoplay: 5000,
-            //     arrows: {
-            //         prev: '.glider-prev',
-            //         next: '.glider-next'
-            //     }
-            // });
 
-            $('.one-time').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                autoplay: true,
-                slidesToShow: 1,
-                adaptiveHeight: true
+            const swiper = new Swiper('.swiper', {
+
+
+                // Optional parameters
+                loop: true,
+
+                autoplay: {
+                    delay: 5000, // Cambia este valor según lo que desees para el intervalo entre diapositivas en milisegundos
+                    disableOnInteraction: false, // Esto permite que el autoplay no se detenga cuando el usuario interactúa con el swiper
+                },
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
             });
+
+
+            // $('.one-time').slick({
+            //     dots: true,
+            //     infinite: true,
+            //     speed: 300,
+            //     autoplay: true,
+            //     slidesToShow: 1,
+            //     adaptiveHeight: true
+            // });
         </script>
     @endpush
 

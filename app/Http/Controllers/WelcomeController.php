@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Cover;
 use App\Models\Order;
 
 class WelcomeController extends Controller
@@ -24,7 +25,16 @@ class WelcomeController extends Controller
             
         }
 
+        $covers = Cover::where('is_active', true)
+                    ->whereDate('start_at', '<=', now())
+                    ->where(function($query){
+                        $query->whereDate('end_at', '>=', now())
+                              ->orWhereNull('end_at');
+                    })
+                    ->get();
+
+                    //return $covers;
         $categories = Category::all();
-        return view('welcome', compact('categories'));
+        return view('welcome', compact('covers', 'categories'));
     }
 }

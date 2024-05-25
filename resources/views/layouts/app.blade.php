@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    {{-- swipe --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -30,8 +33,8 @@
     @livewireStyles
 
     {{-- Slick --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick/slick/slick.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick/slick/slick-theme.css') }}" />
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick/slick/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick/slick/slick-theme.css') }}" /> --}}
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -46,10 +49,13 @@
 
     <script src="{{ asset('vendor/FlexSlider/jquery.flexslider-min.js') }}"></script>
 
+    {{-- Swipe --}}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     {{-- SlickJs --}}
     {{-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> --}}
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="{{ asset('vendor/slick/slick/slick.min.js') }}"></script>
+    {{-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ asset('vendor/slick/slick/slick.min.js') }}"></script> --}}
 
 </head>
 
@@ -144,7 +150,8 @@
                         Digital Wd
                     </h6>
                     <p>
-                      Somos distribuidores de tecnología en equipos de cómputo, telefonía celular accesorios monitores e impresoras, comercializamos soluciones tecnológicas de las marcas más prestigiosas.
+                        Somos distribuidores de tecnología en equipos de cómputo, telefonía celular accesorios monitores
+                        e impresoras, comercializamos soluciones tecnológicas de las marcas más prestigiosas.
                     </p>
                 </div>
                 <div class="">
@@ -152,16 +159,22 @@
                         Acerca de DigitalWDStore
                     </h6>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">¿Quienes somos?</a>
+                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">¿Quienes
+                            somos?</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Responsabilidad social</a>
+                        <a href="#!"
+                            class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Responsabilidad
+                            social</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Protección de propiedad intelectual</a>
+                        <a href="#!"
+                            class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Protección de
+                            propiedad intelectual</a>
                     </p>
                     <p>
-                        <a href="{{route('login')}}" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Iniciar sesión</a>
+                        <a href="{{ route('login') }}"
+                            class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Iniciar sesión</a>
                     </p>
                 </div>
                 <div class="">
@@ -169,16 +182,23 @@
                         Servicio al cliente
                     </h6>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Preguntas frecuentes</a>
+                        <a href="#!"
+                            class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Preguntas
+                            frecuentes</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Tratamiento de datos personales</a>
+                        <a href="#!"
+                            class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Tratamiento de datos
+                            personales</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Terminos y condiciones</a>
+                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Terminos
+                            y condiciones</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Peticiones, quejas y reclamos</a>
+                        <a href="#!"
+                            class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Peticiones, quejas y
+                            reclamos</a>
                     </p>
                 </div>
                 <div>
@@ -228,7 +248,8 @@
         </div>
         <div class="bg-neutral-900 p-6 text-center dark:bg-neutral-700">
             <span>© 2023 Copyright:</span>
-            <a class="font-semibold text-neutral-200 dark:text-neutral-400 hover:text-rojo-600" href="https://diswelldone.com/">Welldone</a>
+            <a class="font-semibold text-neutral-200 dark:text-neutral-400 hover:text-rojo-600"
+                href="https://diswelldone.com/">Welldone</a>
         </div>
     </footer>
 </body>
