@@ -56,7 +56,8 @@
         </div>
 
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="text-lg uppercase font-semibold text-zinc mb-4">Marcas aliadas</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
             @foreach ($brands as $brand)
                 <!-- Tarjeta de Marca -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
