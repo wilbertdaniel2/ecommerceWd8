@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Cover;
@@ -33,8 +34,10 @@ class WelcomeController extends Controller
                     })
                     ->get();
 
+        $brands= Brand::all()->take(8);
+
                     //return $covers;
         $categories = Category::all();
-        return view('welcome', compact('covers', 'categories'));
+        return view('welcome', compact('covers', 'categories', 'brands'));
     }
 }
