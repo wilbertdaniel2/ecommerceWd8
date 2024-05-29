@@ -37,7 +37,7 @@ class CreateCover extends Component
     public $editImage;
 
     protected $rules = [
-        'createForm.image_path' => 'required|image|dimensions:min_width=1476,min_height=348|max:1024',
+        'createForm.image_path' => 'required|image|dimensions:min_width=1476,min_height=348|max:3072',
         'createForm.title' => 'required',
         'createForm.start_at' => 'required|date',
         //'createForm.end_at' => 'required',

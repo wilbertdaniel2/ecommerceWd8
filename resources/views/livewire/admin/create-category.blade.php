@@ -32,6 +32,16 @@
 
             <div class="col-span-6 sm:col-span-4">
                 <x-jet-label>
+                    Url
+                </x-jet-label>
+
+                <x-jet-input wire:model.defer="createForm.url" type="text" class="w-full mt-1"/>
+
+                <x-jet-input-error for="createForm.url" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label>
                     Icono
                 </x-jet-label>
 
@@ -65,12 +75,22 @@
 
             <div class="col-span-6 sm:col-span-4">
                 <x-jet-label>
-                    Imagen
+                    Imagen para la categoria oculta
                 </x-jet-label>
 
                 <input wire:model="createForm.image" accept="image/*" type="file" class="mt-1" name="" id="{{$rand}}">
 
                 <x-jet-input-error for="createForm.image" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label>
+                    Imagen de la categoria en la pagina principal
+                </x-jet-label>
+
+                <input wire:model="createForm.image_banner" accept="image/*" type="file" class="mt-1" name="" id="{{$rand}}">
+
+                <x-jet-input-error for="createForm.image_banner" />
             </div>
         </x-slot>
 
@@ -142,10 +162,24 @@
             <div class="space-y-3">
 
                 <div>
+                    <x-jet-label>
+                        Imagen para la categoria oculta
+                    </x-jet-label>
                     @if ($editImage)
                         <img class="w-full h-64 object-cover object-center" src="{{$editImage->temporaryUrl()}}" alt="">
                     @elseif($editForm['image'])
                         <img class="w-full h-64 object-cover object-center" src="{{Storage::url($editForm['image'])}}" alt="">
+                    @endif
+                </div>
+
+                <div>
+                    <x-jet-label>
+                        Imagen para la categoria en la pagina principal
+                    </x-jet-label>
+                    @if ($editImageBanner)
+                        <img class="w-full h-64 object-cover object-center" src="{{$editImageBanner->temporaryUrl()}}" alt="">
+                    @elseif($editForm['image_banner'])
+                        <img class="w-full h-64 object-cover object-center" src="{{Storage::url($editForm['image_banner'])}}" alt="">
                     @endif
                 </div>
 
@@ -168,6 +202,16 @@
                         <x-jet-input disabled wire:model="editForm.slug" type="text" class="w-full mt-1 bg-gray-100"/>
         
                         <x-jet-input-error for="editForm.slug" />
+                    </div>
+
+                    <div>
+                        <x-jet-label>
+                            Url
+                        </x-jet-label>
+        
+                        <x-jet-input wire:model="editForm.url" type="text" class="w-full mt-1"/>
+        
+                        <x-jet-input-error for="editForm.url" />
                     </div>
         
                     <div>
@@ -205,12 +249,21 @@
         
                     <div>
                         <x-jet-label>
-                            Imagen
+                            Imagen para la categoria oculta
                         </x-jet-label>
         
                         <input wire:model="editImage" accept="image/*" type="file" class="mt-1" name="" id="{{$rand}}">
         
                         <x-jet-input-error for="editImage" />
+                    </div>
+                    <div>
+                        <x-jet-label>
+                            Imagen de la categoria en la pagina principal
+                        </x-jet-label>
+        
+                        <input wire:model="editImageBanner" accept="image/*" type="file" class="mt-1" name="" id="{{$rand}}">
+        
+                        <x-jet-input-error for="editImageBanner" />
                     </div>
             </div>
         </x-slot>

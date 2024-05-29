@@ -5,12 +5,27 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                @foreach ($covers as $cover)
+
+                @if ($covers->isNotEmpty())
+                    @foreach ($covers as $cover)
+                        @if (!empty($cover->image_path))
+                            <div class="swiper-slide">
+                                <img src="{{ Storage::url($cover->image_path) }}"
+                                    class="w-full object-cover object-center" alt="">
+                            </div>
+                        @endif
+                    @endforeach
+                @else
                     <div class="swiper-slide">
-                        <img src="{{ Storage::url($cover->image_path) }}" class="w-full object-cover object-center"
-                            alt="">
+                        <img class=" object-cover" src="{{ asset('img/slide-default-1.png') }}" alt="">
                     </div>
-                @endforeach
+                    <div class="swiper-slide">
+                        <img class=" object-cover" src="{{ asset('img/slide-default-2.png') }}" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class=" object-cover" src="{{ asset('img/slide-default-3.png') }}" alt="">
+                    </div>
+                @endif
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -29,11 +44,15 @@
 
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+            @foreach ($categories as $category)
             <div>
                 <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+                    src="{{Storage::url($category->image_banner)}}" alt="">
             </div>
-            <div>
+            @endforeach
+            
+
+            {{-- <div>
                 <img class="h-auto max-w-full rounded-lg"
                     src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
             </div>
@@ -52,7 +71,7 @@
             <div>
                 <img class="h-auto max-w-full rounded-lg"
                     src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-            </div>
+            </div> --}}
         </div>
 
 

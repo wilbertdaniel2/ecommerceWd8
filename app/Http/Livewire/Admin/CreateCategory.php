@@ -23,7 +23,9 @@ class CreateCategory extends Component
         'name' => null,
         'slug' => null,
         'icon' => null,
+        'url' => null,
         'image' => null,
+        'image_banner' => null,
         'brands' => [],
     ];
 
@@ -32,17 +34,22 @@ class CreateCategory extends Component
         'name' => null,
         'slug' => null,
         'icon' => null,
+        'url' => null,
         'image' => null,
+        'image_banner' => null,
         'brands' => [],
     ];
 
     public $editImage;
+    public $editImageBanner;
 
     protected $rules = [
         'createForm.name' => 'required',
         'createForm.slug' => 'required|unique:categories,slug',
         'createForm.icon' => 'required',
+        'createForm.url' => 'required',
         'createForm.image' => 'required|image|max:1024',
+        'createForm.image_banner' => 'required|image|max:1024',
         'createForm.brands' => 'required'
     ];
 
@@ -50,12 +57,16 @@ class CreateCategory extends Component
         'createForm.name' => 'nombre',
         'createForm.slug' => 'slug',
         'createForm.icon' => 'icono',
+        'createForm.url' => 'url',
         'createForm.image' => 'imagen',
+        'createForm.image_banner' => 'banner',
         'createForm.brands' => 'marcas',
         'editForm.name' => 'nombre',
         'editForm.slug' => 'slug',
         'editForm.icon' => 'icono',
+        'editForm.url' => 'url',
         'editForm.image' => 'imagen',
+        'editForm.image_banner' => 'banner',
         'editForm.brands' => 'marcas'
     ];
 
@@ -92,11 +103,14 @@ class CreateCategory extends Component
 
 
         $image = $this->createForm['image']->store('categories');
+        $image_banner = $this->createForm['image_banner']->store('categories');
 
         $category = Category::create([
             'name' => $this->createForm['name'],
             'slug' => $this->createForm['slug'],
             'icon' => $this->createForm['icon'],
+            'url' => $this->createForm['url'],
+            'image_banner' => $image_banner,
             'image' => $image
         ]);
 
@@ -122,7 +136,9 @@ class CreateCategory extends Component
         $this->editForm['name'] = $category->name;
         $this->editForm['slug'] = $category->slug;
         $this->editForm['icon'] = $category->icon;
+        $this->editForm['url'] = $category->url;
         $this->editForm['image'] = $category->image;
+        $this->editForm['image_banner'] = $category->image_banner;
         $this->editForm['brands'] = $category->brands->pluck('id');
     }
 
@@ -133,11 +149,16 @@ class CreateCategory extends Component
             'editForm.name' => 'required',
             'editForm.slug' => 'required|unique:categories,slug,' . $this->category->id,
             'editForm.icon' => 'required',
+            'editForm.url' => 'required',
             'editForm.brands' => 'required',
         ];
 
         if ($this->editImage) {
             $rules['editImage'] = 'required|image|max:1024';
+        }
+
+        if ($this->editImageBanner) {
+            $rules['editImageBanner'] = 'required|image|max:1024';
         }
 
         $this->validate($rules);
@@ -147,11 +168,16 @@ class CreateCategory extends Component
             $this->editForm['image'] = $this->editImage->store('categories');
         }
 
+        if ($this->editImageBanner) {
+            Storage::delete($this->editForm['image_banner']);
+            $this->editForm['image_banner'] = $this->editImageBanner->store('categories');
+        }
+
         $this->category->update($this->editForm);
 
         $this->category->brands()->sync($this->editForm['brands']);
 
-        $this->reset(['editForm', 'editImage']);
+        $this->reset(['editForm', 'editImage', 'editImageBanner']);
 
         $this->getCategories();
     }
