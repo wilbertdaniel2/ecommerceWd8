@@ -45,51 +45,62 @@
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
             @foreach ($categories as $category)
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="{{Storage::url($category->image_banner)}}" alt="">
-            </div>
-            @endforeach
-            
-
-            {{-- <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-            </div> --}}
-        </div>
-
-
-        <div class="text-lg uppercase font-semibold text-zinc mb-4">Marcas aliadas</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-            @foreach ($brands as $brand)
-                <!-- Tarjeta de Marca -->
-                <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img class="w-full h-32 object-cover" src="{{ $brand->image_url }}" alt="{{ $brand->name }}">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">{{ $brand->name }}</h3>
-                    </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="{{ Storage::url($category->image_banner) }}"
+                        alt="">
                 </div>
             @endforeach
         </div>
 
 
+        <div class="text-lg uppercase font-semibold text-zinc mb-4">Busca por marcas!</div>
 
+        <div class="container mx-auto p-4">
+            <div class="glider-contain">
+                <div class="glider">
+                    <div class="px-4">
+                        <a href="https://store.digitalwd.com.co/categories/celulares-y-tablets?marca=SAMSUNG">
+                            <img class="rounded-lg" src="{{ asset('img/samsung.jpg') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="px-4">
+                        <a href="https://store.digitalwd.com.co/categories/celulares-y-tablets?marca=XIAOMI">
+                            <img class="rounded-lg" src="{{ asset('img/xiaomi.jpg') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="px-4">
+                        <a href="https://store.digitalwd.com.co/categories/celulares-y-tablets?marca=APPLE">
+                            <img class="rounded-lg" src="{{ asset('img/apple.png') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="px-4">
+                        <a href="https://store.digitalwd.com.co/categories/consolas-y-videojuegos?marca=SONY">
+                            <img class="rounded-lg" src="{{ asset('img/play.jpg') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="px-4">
+                        <a href="https://store.digitalwd.com.co/categories/consolas-y-videojuegos?subcategoria=xbox">
+                            <img class="rounded-lg" src="{{ asset('img/xbox.png') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="px-4">
+                        <a href="https://store.digitalwd.com.co/categories/computacion?marca=LENOVO">
+                            <img class="rounded-lg" src="{{ asset('img/lenovo.jpg') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="px-4">
+                        <a href="https://store.digitalwd.com.co/categories/computacion?marca=HP">
+                            <img class="rounded-lg" src="{{ asset('img/hp.png') }}" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <div role="tablist" class="dots"></div>
+        </div>
 
         @foreach ($categories as $category)
             <section class="mb-6">
@@ -173,6 +184,17 @@
 
     @push('script')
         <script>
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+
             Livewire.on('glider', function(id) {
 
                 new Glider(document.querySelector('.glider-' + id), {
@@ -247,14 +269,15 @@
             });
 
 
-            // $('.one-time').slick({
-            //     dots: true,
-            //     infinite: true,
-            //     speed: 300,
-            //     autoplay: true,
-            //     slidesToShow: 1,
-            //     adaptiveHeight: true
-            // });
+
+            $(window).load(function() {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    animationLoop: false,
+                    itemWidth: 210,
+                    itemMargin: 5
+                });
+            });
         </script>
     @endpush
 

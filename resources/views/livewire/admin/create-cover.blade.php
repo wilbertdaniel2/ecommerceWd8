@@ -50,6 +50,13 @@
                     <input wire:model.defer="createForm.is_active" type="radio" name="is_active" value="1">
                     Marcar publicidad como activa
                 </label>
+
+                @if (session('error'))
+                    <div class="bg-rojo-400 text-gray-800 p-2 mb-4">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
             </div>
 
             <div class="col-span-6 sm:col-span-4">
@@ -62,7 +69,8 @@
 
                 <div class="mt-5">
                     <p>
-                        La imagen seleccionada para la publicidad debe tener las siguientes medidas, ancho: 1903 x alto: 564
+                        La imagen seleccionada para la publicidad debe tener las siguientes medidas, ancho: 1903 x alto:
+                        564
                     </p>
                 </div>
 
@@ -75,6 +83,8 @@
 
                 <x-jet-input-error for="createForm.image_path" />
             </div>
+
+            
         </x-slot>
 
         <x-slot name="actions">
@@ -265,6 +275,12 @@
                     </label>
                 </div>
 
+                @if (session('error'))
+                    <div class="bg-rojo-400 text-gray-800 p-2 mb-4">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
                 {{-- <div>
                         <x-jet-label>
                             Marcas
@@ -325,7 +341,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Livewire.emitTo('admin.create-cover', 'delete',
-                        coverId); // Emitir evento al componente correcto
+                            coverId); // Emitir evento al componente correcto
                         Swal.fire(
                             'Borrado!',
                             'Tu archivo ha sido borrado',

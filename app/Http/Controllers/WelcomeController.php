@@ -34,7 +34,7 @@ class WelcomeController extends Controller
                     })
                     ->get();
 
-        $brands= Brand::all()->take(8);
+        $brands= Brand::all()->take(8); //Esta consulta no se esta usando de momento 30/05/2024
 
                     //return $covers;
         $categories = Category::all();

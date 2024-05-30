@@ -41,7 +41,7 @@ class CreateCover extends Component
         'createForm.title' => 'required',
         'createForm.start_at' => 'required|date',
         //'createForm.end_at' => 'required',
-        'createForm.is_active' => 'required'
+        'createForm.is_active' => 'required|boolean'
     ];
 
     protected $validationAttributes = [
@@ -87,6 +87,18 @@ class CreateCover extends Component
     public function save()
     {
         $this->validate();
+
+
+        if ($this->createForm['is_active']) {
+            $maxActivePublicities = 5; // Límite de publicidades activas
+            $activePublicitiesCount = Cover::where('is_active', true)->count();
+    
+            // Si se intenta activar esta publicidad y se supera el límite
+            if ($activePublicitiesCount >= $maxActivePublicities) {
+                session()->flash('error', 'No se pueden activar más de ' . $maxActivePublicities . ' publicidades a la vez.');
+                return;
+            }
+        }
 
 
         $image = $this->createForm['image_path']->store('covers');
@@ -142,7 +154,19 @@ class CreateCover extends Component
             $rules['editImage'] = 'required|image|max:1024';
         }
 
+
         $this->validate($rules);
+
+        if ($this->editForm['is_active']) {
+            $maxActivePublicities = 5; // Límite de publicidades activas
+            $activePublicitiesCount = Cover::where('is_active', true)->count();
+    
+            // Si se intenta activar esta publicidad y se supera el límite
+            if ($activePublicitiesCount >= $maxActivePublicities && !$this->cover->is_active) {
+                session()->flash('error', 'No se pueden activar más de ' . $maxActivePublicities . ' publicidades a la vez.');
+                return;
+            }
+        }
 
         if ($this->editImage) {
             Storage::delete($this->editForm['image_path']);
