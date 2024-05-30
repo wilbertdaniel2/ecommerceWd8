@@ -59,37 +59,37 @@
             <div class="glider-contain">
                 <div class="glider">
                     <div class="px-4">
-                        <a href="https://store.digitalwd.com.co/categories/celulares-y-tablets?marca=SAMSUNG">
+                        <a href="https://digitalwd.com.co/categories/celulares-y-tablets?marca=SAMSUNG">
                             <img class="rounded-lg" src="{{ asset('img/samsung.jpg') }}" alt="">
                         </a>
                     </div>
                     <div class="px-4">
-                        <a href="https://store.digitalwd.com.co/categories/celulares-y-tablets?marca=XIAOMI">
+                        <a href="https://digitalwd.com.co/categories/celulares-y-tablets?marca=XIAOMI">
                             <img class="rounded-lg" src="{{ asset('img/xiaomi.jpg') }}" alt="">
                         </a>
                     </div>
                     <div class="px-4">
-                        <a href="https://store.digitalwd.com.co/categories/celulares-y-tablets?marca=APPLE">
+                        <a href="https://digitalwd.com.co/categories/celulares-y-tablets?marca=APPLE">
                             <img class="rounded-lg" src="{{ asset('img/apple.png') }}" alt="">
                         </a>
                     </div>
                     <div class="px-4">
-                        <a href="https://store.digitalwd.com.co/categories/consolas-y-videojuegos?marca=SONY">
+                        <a href="https://digitalwd.com.co/categories/consolas-y-videojuegos?subcategoria=play-station">
                             <img class="rounded-lg" src="{{ asset('img/play.jpg') }}" alt="">
                         </a>
                     </div>
                     <div class="px-4">
-                        <a href="https://store.digitalwd.com.co/categories/consolas-y-videojuegos?subcategoria=xbox">
+                        <a href="https://digitalwd.com.co/categories/consolas-y-videojuegos?subcategoria=xbox">
                             <img class="rounded-lg" src="{{ asset('img/xbox.png') }}" alt="">
                         </a>
                     </div>
                     <div class="px-4">
-                        <a href="https://store.digitalwd.com.co/categories/computacion?marca=LENOVO">
+                        <a href="https://digitalwd.com.co/categories/computacion?marca=LENOVO">
                             <img class="rounded-lg" src="{{ asset('img/lenovo.jpg') }}" alt="">
                         </a>
                     </div>
                     <div class="px-4">
-                        <a href="https://store.digitalwd.com.co/categories/computacion?marca=HP">
+                        <a href="https://digitalwd.com.co/categories/computacion?marca=HP">
                             <img class="rounded-lg" src="{{ asset('img/hp.png') }}" alt="">
                         </a>
                     </div>
