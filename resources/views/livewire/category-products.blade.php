@@ -43,8 +43,8 @@
                             <h3 class="mt-2 text-lg font-semibold text-gray-700">{{ Str::limit($product->name, 20) }}
                             </h3>
 
-                            <p class="mt-1 text-sm font-medium text-gray-900"><del>Antes: $ {{ number_format($product->false_price) }}</del></p>
-                            <p class="mt-1 text-lg font-medium text-gray-900">$ {{ number_format($product->price) }}</p>
+                            {{-- <p class="mt-1 text-sm font-medium text-gray-900"><del>Antes: $ {{ number_format($product->false_price) }}</del></p>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$ {{ number_format($product->price) }}</p> --}}
                         </div>
 
                     </article>

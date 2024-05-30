@@ -34,13 +34,13 @@
                     <a class="text-red underline" href="">39 Reseñas</a>
                 </div>   
                 
-                <p class="text-sm font-semibold text-gray-500 my-4">
+                {{-- <p class="text-sm font-semibold text-gray-500 my-4">
                     <del>Antes: $ {{ number_format($product->false_price) }}</del>
                  </p>
 
                 <p class="text-2xl font-semibold text-truegray my-4">
                     $ {{ number_format($product->price) }}
-                </p>
+                </p> --}}
 
                 <div class="bg-white rounded-lg shadow-lg mb-6">
                     <div class="p-4 flex items-center">
