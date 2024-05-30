@@ -169,7 +169,7 @@
         {{-- Boton de whatsapp --}}
         <div style="position: fixed; bottom: 20px; right: 20px;">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-            <a href="https://api.whatsapp.com/send?phone=53161377&text=HOLA,%20QUISIERA%20CONSULTAR%20SOBRE%20TUS%20PRODUCTOS"
+            <a href="https://api.whatsapp.com/send?phone=3174160446&text=HOLA,%20QUISIERA%20CONSULTAR%20SOBRE%20TUS%20PRODUCTOS"
                 class="float pulse" target="_blank">
                 <i class="fa fa-whatsapp my-float "></i>
             </a>

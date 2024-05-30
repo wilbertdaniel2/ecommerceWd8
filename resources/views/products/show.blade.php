@@ -72,9 +72,9 @@
 
                     <div class="p-4 flex items-center">
                         <div class="ml-4">
-                            <a href="https://api.whatsapp.com/send?phone=53161377&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
+                            <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
                                 target="_blank">
-                                <img src="{{ asset('img/contraEntrega.jpg') }}" alt="Contactar por WhatsApp">
+                                <img src="{{ asset('img/pago.gif') }}" alt="Contactar por WhatsApp">
                             </a>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         <img class="flex items-center justify-center h-10 w-10 rounded-full"
                             src="{{ asset('img/logo-wasap.png') }}" alt="">
                         <div class="ml-4">
-                            <a href="https://api.whatsapp.com/send?phone=53161377&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
+                            <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
                                 class="underline text-lg font-semibold text-green-600">Contacta con nosotros!</a>
                         </div>
                     </div>
