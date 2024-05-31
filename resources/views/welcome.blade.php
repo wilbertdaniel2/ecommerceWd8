@@ -43,11 +43,12 @@
 
 
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
             @foreach ($categories as $category)
                 <div>
+                    <a href="{{$category->url}}">
                     <img class="h-auto max-w-full rounded-lg" src="{{ Storage::url($category->image_banner) }}"
-                        alt="">
+                        alt=""></a>
                 </div>
             @endforeach
         </div>
