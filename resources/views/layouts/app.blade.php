@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    <meta name="google-site-verification" content="tFzSynmzKvNuE7DNv6zQTP_hWvfJ4MQBMpCgvP7uD1E" />
+
     {{-- swipe --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
