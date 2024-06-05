@@ -29,7 +29,7 @@
 
             <h2 class="font-semibold text-center mt-4 mb-2">Marcas</h2>
             <ul class="divide-y divide-gray-200">
-                @foreach ($category->brands as $brand)
+                @foreach ($marcas as $brand)
                     <li class="py-2 text-sm">
                         <a class="cursor-pointer hover:text-rojo-500 capitalize {{ $marca == $brand->name ? 'text-rojo-500 font-semibold' : '' }}"
                             wire:click="$set('marca', '{{ $brand->name }}')">
@@ -37,6 +37,11 @@
                         </a>
                     </li>
                 @endforeach
+                       {{-- @php
+                       echo '<pre>';
+                           print_r($marcas);
+                           echo '</pre>';
+                       @endphp  --}}
             </ul>
 
             <x-jet-button class="mt-4" wire:click="limpiar">

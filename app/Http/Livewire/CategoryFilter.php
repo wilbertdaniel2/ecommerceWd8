@@ -15,6 +15,7 @@ class CategoryFilter extends Component
 
     public $category, $subcategoria, $marca;
 
+
     public $view = "grid";
 
 
@@ -33,9 +34,11 @@ class CategoryFilter extends Component
         $this->resetPage();
     }
 
+
     public function render()
     {
 
+        $marcas = $this->category->brands()->has('products', '>=', 1)->select('name')->get();
         /* $products = $this->category->products()
                             ->where('status', 2)->paginate(20); */
 
@@ -57,6 +60,6 @@ class CategoryFilter extends Component
 
         $products = $productsQuery->paginate(20);
 
-        return view('livewire.category-filter', compact('products'));
+        return view('livewire.category-filter', compact('products', 'marcas'));
     }
 }
