@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>http://ecommerce.test</loc>
+        <lastmod>2024-06-05T15:28:37-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://ecommerce.test/categories/categoria-prueba</loc>
+        <lastmod>2024-05-29T12:09:17-05:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://ecommerce.test/categories/celulares-y-tablets</loc>
+        <lastmod>2024-05-31T15:14:26-05:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://ecommerce.test/categories/computacion</loc>
+        <lastmod>2024-05-29T12:11:42-05:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://ecommerce.test/categories/consola-y-videojuegos</loc>
+        <lastmod>2024-05-29T12:11:27-05:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://ecommerce.test/categories/moda</loc>
+        <lastmod>2024-05-29T12:12:02-05:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://ecommerce.test/categories/tv-audio-y-video</loc>
+        <lastmod>2024-05-29T12:11:12-05:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
