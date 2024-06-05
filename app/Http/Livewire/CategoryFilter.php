@@ -38,7 +38,13 @@ class CategoryFilter extends Component
     public function render()
     {
 
-        $marcas = $this->category->brands()->has('products', '>=', 1)->select('name')->get();
+        $marcas = $this->category->brands()
+            ->whereHas('products', function ($query) {
+                $query->where('status', '2');
+            })
+            ->has('products', '>=', 1)
+            ->select('name')
+            ->get();
         /* $products = $this->category->products()
                             ->where('status', 2)->paginate(20); */
 
