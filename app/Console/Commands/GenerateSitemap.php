@@ -33,7 +33,8 @@ class GenerateSitemap extends Command
         $sitemap = Sitemap::create();
 
         // Añadir páginas estáticas
-        $sitemap->add(Url::create('/'));
+        $sitemap->add(Url::create('/')
+        ->setPriority(1.0));
         // Añade más URLs estáticas según sea necesario
 
         // Añadir productos dinámicos (ejemplo)
