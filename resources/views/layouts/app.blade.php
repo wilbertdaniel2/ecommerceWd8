@@ -255,9 +255,10 @@
             </div>
         </div>
         <div class="bg-neutral-900 p-6 text-center dark:bg-neutral-700">
-            <span>© 2023 Copyright:</span>
+            <span>© 2024 Copyright:</span>
             <a class="font-semibold text-neutral-200 dark:text-neutral-400 hover:text-rojo-600"
                 href="https://diswelldone.com/">Welldone</a>
+                <div class="mt-8 text-sm">Designed by <a class="hover:text-rojo-600" href="https://github.com/wilbertdaniel2">Wilbert Avila F</a></div>
         </div>
     </footer>
 </body>
