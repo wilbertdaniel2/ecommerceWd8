@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\OrderController;
 
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\Admin\CoverController;
+use App\Http\Controllers\RoleController;
 use App\Http\Livewire\Admin\ShowCategory;
 
 use App\Http\Livewire\Admin\BrandComponent;
@@ -21,7 +22,7 @@ use App\Http\Livewire\Admin\ShowDepartment;
 use App\Http\Livewire\Admin\DepartmentComponent;
 
 use App\Http\Livewire\Admin\MunicipalityComponent;
-
+use App\Http\Livewire\Admin\ShowRole;
 use App\Http\Livewire\Admin\UserComponent;
 
 Route::get('/', ShowProducts::class)->name('admin.index');
@@ -50,6 +51,9 @@ Route::get('departments/{department}', ShowDepartment::class)->name('admin.depar
 Route::get('municipalities/{municipality}', MunicipalityComponent::class)->name('admin.municipalities.show');
 
 Route::get('users', UserComponent::class)->name('admin.users.index');
+
+Route::get('roles', [RoleController::class, 'index'])->name('admin.roles.index');
+Route::get('roles/{role}', ShowRole::class)->name('admin.roles.show');
 
 
 // Route::get('covers', [CoverController::class, 'index'])->name('admin.covers.index');

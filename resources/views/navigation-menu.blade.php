@@ -43,6 +43,10 @@
                     <x-jet-nav-link href=" {{ route('admin.users.index') }} " :active="request()->routeIs('admin.users.index')">
                         Usuarios
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href=" {{ route('admin.roles.index') }} " :active="request()->routeIs('admin.roles.index')">
+                        Roles y permisos
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -204,6 +208,10 @@
 
             <x-jet-responsive-nav-link href=" {{ route('admin.users.index') }} " :active="request()->routeIs('admin.users.index')">
                 Usuarios
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href=" {{ route('admin.roles.index') }} " :active="request()->routeIs('admin.roles.index')">
+                Roles y permisos
             </x-jet-responsive-nav-link>
 
         </div>
