@@ -15,7 +15,7 @@
             </div>
 
             @if (count($users))
-                
+
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
@@ -43,58 +43,45 @@
                     <tbody class="bg-white divide-y divide-gray-200">
 
                         @foreach ($users as $user)
-
-                            <tr wire:key="{{$user->email}}">
+                            <tr wire:key="{{ $user->email }}">
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-gray-900">
-                                        {{$user->id}}
+                                        {{ $user->id }}
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
 
                                     <div class="text-sm text-gray-900">
-                                        {{$user->name}}
+                                        {{ $user->name }}
                                     </div>
 
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">
-                                        {{$user->email}}
+                                        {{ $user->email }}
                                     </div>
 
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <div class="text-sm text-gray-900">
-                                        
-                                        @if (count($user->roles))
-                                            Admin
-                                        @else
-                                            No tiene rol
-                                        @endif
+
+                                        @foreach ($user->roles as $role)
+                                            {{ $role->name }}
+                                        @endforeach
 
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    
-                                    <label>
-                                        <input {{count($user->roles) ? 'checked' : ''}} value="1" type="radio" name="{{$user->email}}" wire:change="assignRole({{$user->id}}, $event.target.value)">
-                                        Si
-                                    </label>
-
-                                    <label class="ml-2">
-                                        <input {{count($user->roles) ? '' : 'checked'}} value="0" type="radio" name="{{$user->email}}" wire:change="assignRole({{$user->id}}, $event.target.value)">
-                                        No
-                                    </label>
+                                    <a class="pr-2 hover:text-tahiti-600 cursor-pointer"
+                                        wire:click="edit('{{ $user->id }}')">Editar</a>
                                 </td>
                             </tr>
-
                         @endforeach
                         <!-- More people... -->
 
-                        
+
                     </tbody>
                 </table>
-
             @else
                 <div class="px-6 py-4">
                     No hay ningún registro coincidente
@@ -102,13 +89,73 @@
             @endif
 
             @if ($users->hasPages())
-                    
                 <div class="px-6 py-4">
-                    {{$users->links()}}
+                    {{ $users->links() }}
                 </div>
-
             @endif
         </x-table-responsive>
     </div>
-</div>
 
+    <x-jet-dialog-modal wire:model="editForm.open">
+        <x-slot name="title">
+            Editar Usuario
+        </x-slot>
+
+        <x-slot name="content">
+
+            <div class="space-y-3">
+                <div>
+                    <x-jet-label>
+                        Nombre del usuario
+                    </x-jet-label>
+
+                    <x-jet-input wire:model="editForm.name" type="text" class="w-full mt-1" />
+
+                    <x-jet-input-error for="editForm.name" />
+
+                </div>
+
+                <div>
+                    <x-jet-label>
+                        Email
+                    </x-jet-label>
+
+                    <x-jet-input disabled wire:model="editForm.email" type="text" class="w-full mt-1 bg-gray-100" />
+
+                    <x-jet-input-error for="editForm.email" />
+                </div>
+
+                <div>
+                    <x-jet-label>
+                        Password
+                    </x-jet-label>
+
+                    <x-jet-input wire:model="editForm.password" type="text" class="w-full mt-1" />
+
+                    <x-jet-input-error for="editForm.password" />
+                </div>
+
+                <div>
+                    <x-jet-label value="Rol" />
+                    <select class="form-control w-full" wire:model="editForm.role">
+                        <option value="" selected disabled>Seleccione un rol</option>
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
+                    </select>
+                
+                    <x-jet-input-error for="editForm.role" />
+                </div>
+            </div>
+        </x-slot>
+
+        <x-slot name="footer">
+
+            <x-jet-danger-button wire:click="update" wire:loading.attr="disabled" wire:target="editImage, update">
+                Actualizar
+            </x-jet-danger-button>
+
+        </x-slot>
+
+    </x-jet-dialog-modal>
+</div>

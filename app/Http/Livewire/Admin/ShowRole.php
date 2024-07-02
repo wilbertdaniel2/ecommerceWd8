@@ -11,7 +11,7 @@ class ShowRole extends Component
 
     protected $listeners = ['delete'];
 
-    public $role, $permissions, $permission;
+    public $role, $permissions_check = [], $permission, $permissions_list;
 
     // public $createForm = [
     //     'name' => '',
@@ -33,14 +33,22 @@ class ShowRole extends Component
     public function mount(Role $role){
         $this->role = $role;
         $this->getPermissions();
+        $this->permissions_check = $this->role->permissions->pluck('id')->toArray();
     }
 
     public function getPermissions(){
-        $this->permissions = Permission::all();
+        $this->permissions_list = Permission::all();
     }
+
+    public function save(){
+        $this->role->syncPermissions($this->permissions_check); 
+    }
+
+    
 
     public function render()
     {
+        
         return view('livewire.admin.show-role')->layout('layouts.admin');
     }
 }
