@@ -7,10 +7,12 @@
                 Lista de productos
             </h2>
     
+            @can('admin.products.create')
             <x-button-enlace class="ml-auto" href="{{route('admin.products.create')}}">
                 Agregar producto
             </x-button-enlace>
-
+            @endcan
+            
         </div>
         
     </x-slot>
@@ -108,9 +110,11 @@
                             <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap">
                                 {{number_format($product->price)}}
                             </td>
+                            @can('admin.products.edit')
                             <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
                                 <a href="{{ route('admin.products.edit', $product) }}" class="text-rojo-600 hover:text-rojo-900">Editar</a>
                             </td>
+                            @endcan
                         </tr>
                     @endforeach
 

@@ -56,7 +56,7 @@ class UserComponent extends Component
         $this->editForm['name'] = $user->name;
         $this->editForm['email'] = $user->email;
         $this->editForm['password'] = $user->password;
-        $this->editForm['role'] = $user->roles->pluck('id');
+        $this->editForm['role'] = $user->roles->pluck('id')->first() ?? ''; 
     }
 
     public function update()

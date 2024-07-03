@@ -100,9 +100,13 @@
             <x-jet-action-message class="mr-3" on="saved">
                 Categoria creada!
             </x-jet-action-message>
+
+            @can('admin.categories.create')
             <x-jet-button>
                 Agregar
             </x-jet-button>
+            @endcan
+           
         </x-slot>
     </x-jet-form-section>
 
@@ -139,8 +143,14 @@
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-gray-300 font-semibold">
+                                    @can('admin.categories.edit')
                                     <a class="pr-2 hover:text-tahiti-600 cursor-pointer" wire:click="edit('{{$category->slug}}')">Editar</a>
+                                    @endcan
+                                    
+                                    @can('admin.categories.delete')
                                     <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="$emit('deleteCategory', '{{$category->slug}}')">Eliminar</a>
+                                    @endcan
+                                
                                 </div>
                             </td>
                         </tr>

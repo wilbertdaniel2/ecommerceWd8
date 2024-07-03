@@ -28,9 +28,12 @@
                 Rol agregado
             </x-jet-action-message>
 
+            @can('admin.roles.create')
             <x-jet-button>
                 Agregar
             </x-jet-button>
+            @endcan
+            
         </x-slot>
     </x-jet-form-section>
 
@@ -65,8 +68,15 @@
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-gray-300 font-semibold">
+
+                                    @can('admin.roles.edit')
                                     <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$role}})">Editar</a>
+                                    @endcan
+                                    
+                                    @can('admin.roles.delete')
                                     <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="$emit('deleteRol', {{$role->id}})">Eliminar</a>
+                                    @endcan
+
                                 </div>
                             </td>
                         </tr>

@@ -109,12 +109,12 @@
                         Nombre del usuario
                     </x-jet-label>
 
-                    <x-jet-input wire:model="editForm.name" type="text" class="w-full mt-1" />
+                    <x-jet-input disabled wire:model="editForm.name" type="text" class="w-full mt-1 bg-gray-100" />
 
                     <x-jet-input-error for="editForm.name" />
 
                 </div>
-
+                
                 <div>
                     <x-jet-label>
                         Email
@@ -130,7 +130,7 @@
                         Password
                     </x-jet-label>
 
-                    <x-jet-input wire:model="editForm.password" type="text" class="w-full mt-1" />
+                    <x-jet-input disabled wire:model="editForm.password" type="text" class="w-full mt-1 bg-gray-100" />
 
                     <x-jet-input-error for="editForm.password" />
                 </div>

@@ -20,11 +20,14 @@
             </div>
         </x-slot>
 
+        @can('admin.brands.create')
         <x-slot name="actions">
             <x-jet-button>
                 Agregar
             </x-jet-button>
         </x-slot>
+        @endcan
+        
     </x-jet-form-section>
 
     {{-- Lista de marcas --}}
@@ -58,8 +61,14 @@
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-gray-300 font-semibold">
+                                    @can('admin.brands.edit')
                                     <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit('{{$brand->id}}')">Editar</a>
+                                    @endcan
+                                    
+                                    @can('admin.brands.delete')
                                     <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="$emit('deleteBrand', '{{$brand->id}}')">Eliminar</a>
+                                    @endcan
+                                    
                                 </div>
                             </td>
                         </tr>

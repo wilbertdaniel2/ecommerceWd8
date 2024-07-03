@@ -22,12 +22,14 @@
             </div>
         </x-slot>
 
+        @can('admin.colors.create')
         <x-slot name="actions">
             <x-jet-button>
                 Agregar
             </x-jet-button>
 
         </x-slot>
+        @endcan
 
     </x-jet-form-section>
 

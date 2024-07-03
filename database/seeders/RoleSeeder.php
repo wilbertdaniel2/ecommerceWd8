@@ -55,5 +55,17 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.users.create', 'description' => 'Crear usuarios']);
         Permission::create(['name' => 'admin.users.edit', 'description' => 'Editar usuarios']);
         Permission::create(['name' => 'admin.users.delete', 'description' => 'Eliminar usuarios']);
+
+        // 03/07/2024 Wilbert Avila --- Roles
+        Permission::create(['name' => 'admin.roles.index', 'description' => 'Ver roles']);
+        Permission::create(['name' => 'admin.roles.create', 'description' => 'Crear roles']);
+        Permission::create(['name' => 'admin.roles.edit', 'description' => 'Editar roles']);
+        Permission::create(['name' => 'admin.roles.delete', 'description' => 'Eliminar roles']);
+
+        //03/07/2024 Wilbert Avila --- Publicidades
+        Permission::create(['name' => 'admin.covers.index', 'description' => 'Ver publicidades']);
+        Permission::create(['name' => 'admin.covers.create', 'description' => 'Crear publicidades']);
+        Permission::create(['name' => 'admin.covers.edit', 'description' => 'Editar publicidades']);
+        Permission::create(['name' => 'admin.covers.delete', 'description' => 'Eliminar publicidades']);
     }
 }

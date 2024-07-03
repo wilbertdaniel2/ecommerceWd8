@@ -7,10 +7,11 @@
                     productos
                 </h1>
 
+                @can('admin.products.delete')
                 <x-jet-danger-button wire:click="$emit('deleteProduct')">
                     Eliminar
                 </x-jet-danger-button>
-
+                @endcan
             </div>
         </div>
     </header>

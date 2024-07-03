@@ -16,37 +16,54 @@
                         Productos
                     </x-jet-nav-link>
 
+                    @can('admin.covers.index')
                     <x-jet-nav-link href=" {{ route('admin.covers.index') }} " :active="request()->routeIs('admin.covers.*')">
                         Publicidades
                     </x-jet-nav-link>
-
+                    @endcan
+                   
+                    @can('admin.colors.index')
                     <x-jet-nav-link href=" {{ route('admin.colors.index') }} " :active="request()->routeIs('admin.colors.*')">
                         Colores
                     </x-jet-nav-link>
-
+                    @endcan
+                    
+                    @can('admin.orders.index')
                     <x-jet-nav-link href=" {{ route('admin.orders.index') }} " :active="request()->routeIs('admin.orders.*')">
                         Ordenes
                     </x-jet-nav-link>
-
+                    @endcan
+                    
+                    @can('admin.categories.index')
                     <x-jet-nav-link href=" {{ route('admin.categories.index') }} " :active="request()->routeIs('admin.categories.*')">
                         Categorias
                     </x-jet-nav-link>
-
+                    @endcan
+                    
+                    @can('admin.brands.index')
                     <x-jet-nav-link href=" {{ route('admin.brands.index') }} " :active="request()->routeIs('admin.brands.*')">
                         Marcas
                     </x-jet-nav-link>
-
+                    @endcan
+                    
+                    @can('admin.departments.index')
                     <x-jet-nav-link href=" {{ route('admin.departments.index') }} " :active="request()->routeIs('admin.departments.*')">
                         Departamentos
                     </x-jet-nav-link>
-
+                    @endcan
+                    
+                    @can('admin.users.index')
                     <x-jet-nav-link href=" {{ route('admin.users.index') }} " :active="request()->routeIs('admin.users.index')">
                         Usuarios
                     </x-jet-nav-link>
-
+                    @endcan
+                    
+                    @can('admin.roles.index')
                     <x-jet-nav-link href=" {{ route('admin.roles.index') }} " :active="request()->routeIs('admin.roles.index')">
                         Roles y permisos
                     </x-jet-nav-link>
+                    @endcan
+                    
                 </div>
             </div>
 

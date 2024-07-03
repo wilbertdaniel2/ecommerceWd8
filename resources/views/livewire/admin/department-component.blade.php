@@ -28,9 +28,12 @@
                 Departamento agregado
             </x-jet-action-message>
 
+            @can('admin.departments.create')
             <x-jet-button>
                 Agregar
             </x-jet-button>
+            @endcan
+            
         </x-slot>
     </x-jet-form-section>
 
@@ -65,8 +68,15 @@
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-gray-300 font-semibold">
+
+                                    @can('admin.departments.edit')
                                     <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$department}})">Editar</a>
+                                    @endcan
+                                    
+                                    @can('admin.departments.delete')
                                     <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="$emit('deleteDepartment', {{$department->id}})">Eliminar</a>
+                                    @endcan
+                                    
                                 </div>
                             </td>
                         </tr>

@@ -188,10 +188,14 @@
                                         </td>
                                         <td class="py-2">
                                             <div class="flex divide-x divide-gray-300 font-semibold">
+                                                @can('admin.covers.edit')
                                                 <a class="pr-2 hover:text-tahiti-600 cursor-pointer"
-                                                    wire:click="edit('{{ $cover->id }}')">Editar</a>
+                                                wire:click="edit('{{ $cover->id }}')">Editar</a>
+                                                @endcan
+                                                @can('admin.covers.delete')
                                                 <a class="pl-2 hover:text-rojo-600 cursor-pointer"
-                                                    wire:click="$emit('deleteCover', '{{ $cover->id }}')">Eliminar</a>
+                                                wire:click="$emit('deleteCover', '{{ $cover->id }}')">Eliminar</a>
+                                                @endcan
                                             </div>
                                         </td>
                                     </tr>
