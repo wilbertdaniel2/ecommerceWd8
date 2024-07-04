@@ -41,16 +41,17 @@
                             {{ __('Profile') }}
                         </x-jet-dropdown-link>
 
-                        <x-jet-dropdown-link href="{{ route('orders.index') }}">
+                        {{-- <x-jet-dropdown-link href="{{ route('orders.index') }}">
                             Mis ordenes
-                        </x-jet-dropdown-link>
+                        </x-jet-dropdown-link> --}}
 
                         {{-- @role('admin') --}}
-                        @if (auth()->user()->hasRole('admin'))
-                            <x-jet-dropdown-link href="{{ route('admin.index') }}">
-                                Administrador
-                            </x-jet-dropdown-link>
-                        @endif
+                        @can('admin.products.index')
+                        <x-jet-dropdown-link href="{{ route('admin.index') }}">
+                            Administrador
+                        </x-jet-dropdown-link>
+                        @endcan
+                            
                         {{-- @endrole --}}
 
                         <div class="border-t border-gray-100"></div>
