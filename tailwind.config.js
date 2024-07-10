@@ -23,6 +23,9 @@ module.exports = {
                 'gray': '#f3f4f6',
                 'gray300': '#d1d5db',
                 'truegray': '#1f2937',
+                'green': {
+                    100: '#8FDD7B',
+                },
                 'gray': {
                     100: '#f3f4f6',
                     200: '#e5e7eb',
