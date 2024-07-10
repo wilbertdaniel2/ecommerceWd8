@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="container py-8">
-        <div class="bg-white rounded-3xl shadow-lg grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+        <div class="bg-white rounded-3xl shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
 
             {{-- <div class="bg-white rounded-lg shadow-lg mb-6"> --}}
             <div class="mx-10 my-10">
@@ -78,11 +78,11 @@
 
                 <div class="mt-6 flex flex-col items-center">
 
-                    <x-button-action class="py-4 w-60 rounded-ful my-3" color="rojo-500" href="">
+                    <x-button-action class="py-4 w-60 sm:w-36 md:w-48 rounded-ful my-3" color="rojo-500" href="">
                         Llamanos!
                     </x-button-action>
 
-                    <x-button-action class="py-4 w-60 rounded-ful my-3" color="green-100" href="">
+                    <x-button-action class="py-4 w-60 sm:w-36 md:w-48 rounded-ful my-3" color="green-100" href="">
                         Escribenos!
                     </x-button-action>
 
@@ -153,7 +153,7 @@
                         </div>
                     </div>
 
-                    <div class="p-4 pt-6 flex items-center">
+                    <div class="p-4 pt-6 flex items-center sm:flex-col">
                         <div class="ml-4">
                             <a href="/" class="text-lg font-semibold text-gray-600">Para pagos contra entregas escribenos</a>
                         </div>
