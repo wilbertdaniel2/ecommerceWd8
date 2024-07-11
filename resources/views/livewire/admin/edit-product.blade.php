@@ -29,7 +29,7 @@
         </div>
 
         <p class="mb-4"><b>Recomendacion</b>, la imagen debe ser menor a 2 mb de lo contrario el sistema no permitira subir dicha imagen. 
-            El formato de la imagen debe ser jpg, para una buena visualizacion del producto la imagen debe ser 600x600, Si el producto aun
+            El formato de la imagen debe ser jpg, para una buena visualizacion del producto la imagen debe ser 566*522, Si el producto aun
         no tiene imagenes, el estado del producto debe ser siempre "Borrador"</p>
 
 
@@ -111,10 +111,10 @@
             </div>
 
 
-            {{-- Descripcion --}}
+            {{-- Caracteristicas destacadas --}}
             <div class="mb-4">
                 <div wire:ignore>
-                    <x-jet-label value="Descripción" />
+                    <x-jet-label value="Caracteristicas destacadas" />
                     <textarea class="w-full form-control" rows="4" wire:model="product.description" x-data x-init="ClassicEditor
                         .create($refs.miEditor)
                         .then(function(editor) {
@@ -126,9 +126,29 @@
                             console.error(error);
                         });"
                         x-ref="miEditor">
-                </textarea>
+                    </textarea>
                 </div>
                 <x-jet-input-error for="product.description" />
+            </div>
+
+            {{-- Resumen del producto --}}
+            <div class="mb-4">
+                <div wire:ignore>
+                    <x-jet-label value="Resumen del producto" />
+                    <textarea class="w-full form-control" rows="4" wire:model="product.detail_description" x-data x-init="ClassicEditor
+                        .create($refs.miEditor)
+                        .then(function(editor) {
+                            editor.model.document.on('change:data', () => {
+                                @this.set('product.detail_description', editor.getData())
+                            })
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });"
+                        x-ref="miEditor">
+                    </textarea>
+                </div>
+                <x-jet-input-error for="product.detail_description" />
             </div>
 
             <div class="grid grid-cols-2 gap-6 mb-4">

@@ -32,6 +32,7 @@ class EditProduct extends Component
         'product.name' => 'required',
         'slug' => 'required|unique:products,slug',
         'product.description' => 'required',
+        'product.detail_description' => 'required',
         'product.brand_id' => 'required',
         'product.price' => 'required',
         'product.false_price' => 'required',

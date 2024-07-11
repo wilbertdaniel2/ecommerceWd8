@@ -219,7 +219,9 @@
                 </ul>
             </div>
 
-            <div class="m-10"></div>
+            <div class="m-10">
+                {{ $product->detail_description }}
+            </div>
         </div>
 
         @endif

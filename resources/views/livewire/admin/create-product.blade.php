@@ -57,10 +57,10 @@
     </div>
 
 
-    {{-- Descripcion --}}
+    {{-- Caracteristicas destacadas --}}
     <div class="mb-4" >
         <div wire:ignore>
-            <x-jet-label value="Descripción" />
+            <x-jet-label value="Caracteristicas destacadas" />
             <textarea class="w-full form-control" rows="4" wire:model="description" x-data x-init="ClassicEditor
                 .create($refs.miEditor)
                 .then(function(editor) {
@@ -75,6 +75,26 @@
             </textarea>
         </div>
         <x-jet-input-error for="description" />
+    </div>
+
+    {{-- Resumen del producto --}}
+    <div class="mb-4" >
+        <div wire:ignore>
+            <x-jet-label value="Resumen del producto" />
+            <textarea class="w-full form-control" rows="4" wire:model="detail_description" x-data x-init="ClassicEditor
+                .create($refs.miEditor)
+                .then(function(editor) {
+                    editor.model.document.on('change:data', () => {
+                        @this.set('detail_description', editor.getData())
+                    })
+                })
+                .catch(error => {
+                    console.error(error);
+                });"
+                x-ref="miEditor">
+            </textarea>
+        </div>
+        <x-jet-input-error for="detail_description" />
     </div>
 
     <div class="grid grid-cols-2 gap-6 mb-4">
