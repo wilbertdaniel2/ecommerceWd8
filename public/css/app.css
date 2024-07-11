@@ -1490,6 +1490,12 @@ select {
 .w-full {
   width: 100%;
 }
+.w-36 {
+  width: 9rem;
+}
+.w-64 {
+  width: 16rem;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -1608,6 +1614,9 @@ select {
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .flex-row {
   flex-direction: row;
 }
@@ -1640,6 +1649,9 @@ select {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-2 {
+  gap: 0.5rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1827,6 +1839,10 @@ select {
 }
 .border-transparent {
   border-color: transparent;
+}
+.border-rojo-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 .border-r-transparent {
   border-right-color: transparent;
@@ -2846,12 +2862,12 @@ select {
     width: 2.5rem;
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
   .sm\:w-36 {
     width: 9rem;
+  }
+
+  .sm\:w-full {
+    width: 100%;
   }
 
   .sm\:max-w-2xl {
@@ -3013,12 +3029,16 @@ select {
     display: grid;
   }
 
+  .md\:w-48 {
+    width: 12rem;
+  }
+
   .md\:w-56 {
     width: 14rem;
   }
 
-  .md\:w-48 {
-    width: 12rem;
+  .md\:w-64 {
+    width: 16rem;
   }
 
   .md\:grid-cols-2 {
@@ -3047,10 +3067,6 @@ select {
 
   .md\:border-t-0 {
     border-top-width: 0px;
-  }
-
-  .md\:border-none {
-    border-style: none;
   }
 
   .md\:px-4 {
@@ -3094,6 +3110,18 @@ select {
     display: flex;
   }
 
+  .lg\:w-60 {
+    width: 15rem;
+  }
+
+  .lg\:w-64 {
+    width: 16rem;
+  }
+
+  .lg\:w-48 {
+    width: 12rem;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3132,6 +3160,10 @@ select {
 
   .xl\:col-span-3 {
     grid-column: span 3 / span 3;
+  }
+
+  .xl\:w-64 {
+    width: 16rem;
   }
 
   .xl\:grid-cols-5 {

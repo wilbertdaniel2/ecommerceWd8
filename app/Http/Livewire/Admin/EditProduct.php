@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Feature;
+use App\Models\FeatureDetail;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Subcategory;
@@ -18,7 +20,8 @@ use Illuminate\Support\Str;
 
 class EditProduct extends Component
 {
-    public $product, $categories, $subcategories, $brands, $slug;
+    public $product, $categories, $subcategories, $brands, $slug, $features, $feature_id, $feature_detail, $feature;
+    public $action = "store";
 
     public $category_id;
 
@@ -41,6 +44,8 @@ class EditProduct extends Component
         $this->product = $product;
 
         $this->categories = Category::all();
+
+        $this->features = Feature::all();
 
         $this->category_id = $product->subcategory->category->id;
 
@@ -96,6 +101,48 @@ class EditProduct extends Component
         $this->product->save();
 
         $this->emit('saved');
+    }
+
+    public function addFeature(){
+        $this->validate([
+            'feature_id' => 'required',
+            'feature_detail' => 'required'
+        ]);
+
+        FeatureDetail::create([
+            'feature_id' => $this->feature_id,
+            'description' => $this->feature_detail,
+            'order' => $this->feature_id,
+            'product_id' => $this->product->id
+        ]);
+
+        $this->emit('refreshProduct');
+        $this->reset('feature_id', 'feature_detail');
+    }
+
+    public function editFeature($id){
+        $this->feature = FeatureDetail::find($id);
+
+
+        $this->feature_id = $this->feature->feature_id;
+        $this->feature_detail = $this->feature->description;
+
+        $this->action = "update";
+    }
+
+    public function updateFeature(){
+        $this->feature->update([
+            'feature_id' => $this->feature_id,
+            'description' => $this->feature_detail,
+        ]);
+
+        $this->emit('refreshProduct');
+        $this->reset('feature_id', 'feature_detail', 'feature', 'action');
+    }
+
+    public function deleteFeature(FeatureDetail $feature_detail){
+        $feature_detail->delete();
+        $this->emit('refreshProduct');
     }
 
     public function deleteImage(Image $image){

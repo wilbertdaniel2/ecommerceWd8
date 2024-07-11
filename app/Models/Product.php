@@ -53,6 +53,10 @@ class Product extends Model
         return $this->hasMany(Grid::class);
     }
 
+    public function feature_details(){
+        return $this->hasMany(FeatureDetail::class);
+    }
+
     //Relacion uno a muchos inversa
     public function brand(){
         return $this->belongsTo(Brand::class);

@@ -17,7 +17,7 @@
     </header>
 
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px8 py-12 text-gray-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px8 py-4 text-gray-700">
 
         <h1 class="text-3xl text-center font-semibold mb-8">
             Complete esta informacion para crear un producto
@@ -210,6 +210,99 @@
         @endif
 
 
+
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px8 py-4 text-gray-700">
+
+        <h1 class="text-3xl text-center font-semibold mb-8">
+            Complete las especificaciones para crear un producto
+        </h1>
+
+        {{-- @php
+        var_dump($product->feature_details);  
+        @endphp --}}
+
+        <div class="bg-white shadow-xl rounded-lg p-6">
+            <div class="grid grid-cols-2 gap-6 mb-4">
+                <div>
+                    <x-jet-label value="Caracteristica" />
+                    <select class="form-control w-full" wire:model="feature_id">
+                        <option value="" selected>Seleccione una caracteristica</option>
+                        @foreach ($features as $feature)
+                            <option value="{{ $feature->id }}">{{ $feature->name }}</option>
+                        @endforeach
+                    </select>
+
+                    <x-jet-input-error for="feature_id" />
+                </div>
+
+                <div>
+                    <x-jet-label value="Descripción" />
+                    <x-jet-input wire:model="feature_detail" type="text" class="w-full" step=".01" />
+
+                    <x-jet-input-error for="feature_detail" />
+
+        
+                </div>
+
+            </div>
+
+            <div class="flex justify-end items-center m-4">
+
+                <x-jet-action-message class="mr-3" on="save">
+                    Actualizado!
+                </x-jet-action-message>
+
+                @if ($feature_id && $feature_detail)
+                    
+                <x-jet-button wire:loading.attr="disabled" wire.target="save" wire:click="{{ $action == 'update' ? 'updateFeature' : 'addFeature'}}">
+                   {{ $action == 'update' ? 'Actualizar' : 'Agregar'}} caracteristica
+                </x-jet-button>
+
+                @endif
+            </div>
+
+            <table class="text-gray-600 w-full">
+                <thead class="border-b border-gray-300">
+                    <tr class="text-left">
+                        <th class="py-2">Nombre</th>
+                        <th class="py-2">Descripción</th>
+                        <th class="py-2">Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody class="divide-y divide-gray-300">
+                    @foreach ($product->feature_details as $detail)
+                        <tr>
+                            <td class="py-2">
+                                <span class="uppercase">
+                                    {{$detail->feature->name}}
+                                </span>
+                            </td>
+
+                            <td class="py-2">
+                                <span class="uppercase">
+                                    {{$detail->description}}
+                                </span>
+                            </td>
+                            <td class="py-2">
+                                <div class="flex divide-x divide-gray-300 font-semibold">
+                                  
+                                    <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="editFeature({{$detail->id}})">Editar</a>
+
+                                    
+                                    <a class="pl-2 hover:text-rojo-600 cursor-pointer" wire:click="deleteFeature({{$detail}})">Eliminar</a>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+
+        </div>
 
     </div>
 

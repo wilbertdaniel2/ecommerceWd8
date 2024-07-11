@@ -78,11 +78,11 @@
 
                 <div class="mt-6 flex flex-col items-center">
 
-                    <x-button-action class="py-4 w-60 sm:w-36 md:w-48 rounded-ful my-3" color="rojo-500" href="">
+                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="rojo-500" href="">
                         Llamanos!
                     </x-button-action>
 
-                    <x-button-action class="py-4 w-60 sm:w-36 md:w-48 rounded-ful my-3" color="green-100" href="">
+                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="green-100" href="">
                         Escribenos!
                     </x-button-action>
 
@@ -184,28 +184,45 @@
             </div>
         </div>
 
+        @if ($product->feature_details->count()>0)
+            
         <div class="bg-white rounded-3xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
             
+
             <div class="m-10">
+
+                <div class="mb-4"> 
+                    <h2 class="text-xl">Especificaciones:</h2>
+                    <hr class="mb-6 border-rojo-500">
+                </div>
+                
+               
+
                 <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+                    @foreach ($product->feature_details()->orderBy('order', 'asc')->get() as $feature)
+                        
+                    
                     <li class="pb-3 sm:pb-4">
                        <div class="flex items-center space-x-4 rtl:space-x-reverse">
                           <div class="flex-1 min-w-0">
                              <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                Neil Sims
-                             </p>
-                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                email@flowbite.com
+                                {{ $feature->feature->name }}
                              </p>
                           </div>
                           <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                             $320
+                            {{ $feature->description }}
                           </div>
                        </div>
                     </li> 
+
+                    @endforeach
                 </ul>
             </div>
+
+            <div class="m-10"></div>
         </div>
+
+        @endif
     </div>
 
     @push('script')
