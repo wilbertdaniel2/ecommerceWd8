@@ -71,6 +71,10 @@
     {{-- FlexSlider --}}
     <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css') }}">
 
+    {{-- Flowbite --}}
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+
+
     @livewireStyles
 
     {{-- Slick --}}
@@ -92,6 +96,10 @@
 
     {{-- Swipe --}}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    {{-- flowbite --}}
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+
 
     {{-- SlickJs --}}
     {{-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> --}}
@@ -203,16 +211,16 @@
                         Acerca de DigitalWDStore
                     </h6>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">¿Quienes
+                        <a href="{{ route('about.index') }}" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">¿Quienes
                             somos?</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!"
+                        <a href="{{ route('social.index')}}"
                             class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Responsabilidad
                             social</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!"
+                        <a href="{{ route('intellectual.index')}}"
                             class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Protección de
                             propiedad intelectual</a>
                     </p>
@@ -226,7 +234,7 @@
                         Servicio al cliente
                     </h6>
                     <p class="mb-4">
-                        <a href="#!"
+                        <a href="{{ route('questions.index') }}"
                             class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Preguntas
                             frecuentes</a>
                     </p>

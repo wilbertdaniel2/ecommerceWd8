@@ -1,7 +1,7 @@
 <header class="bg-zinc-400 sticky top-0 z-50" x-data="dropdown()">
     <div class="container flex items-center h-14 justify-between md:justify-start">
         <a :class="{ 'bg-opacity-100 text-rojo-600': open }" x-on:click="show()"
-            class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
+            class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-zinc-300 bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16" />
@@ -97,7 +97,7 @@
     </div>
 
     <nav id="navigation-menu" x-show="open" :class="{ 'block': open, 'hidden': !open }"
-        class="bg-gray-700 bg-opacity-25 w-full absolute hidden">
+        class="bg-zinc-600 bg-opacity-25 w-full absolute hidden">
 
         {{-- Menu computadora --}}
         <div class="container h-full hidden md:block">

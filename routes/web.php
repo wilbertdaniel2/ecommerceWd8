@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\BusinessName;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WelcomeController;
@@ -23,6 +25,11 @@ Route::get('categories/{category}', [CategoryController::class, 'show'])->name('
 Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 Route::get('shopping-cart', ShoppingCart::class)->name('shopping-cart');
+
+Route::get('about', [BusinessController::class, 'about'])->name('about.index');
+Route::get('social', [BusinessController::class, 'social'])->name('social.index');
+Route::get('intellectual', [BusinessController::class, 'intellectual'])->name('intellectual.index');
+Route::get('questions', [BusinessController::class, 'questions'])->name('questions.index');
 
 Route::middleware(['auth'])->group(function(){
 

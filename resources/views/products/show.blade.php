@@ -3,7 +3,7 @@
         <div class="bg-white rounded-3xl shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
 
             {{-- <div class="bg-white rounded-lg shadow-lg mb-6"> --}}
-            <div class="mx-10 my-10">
+            <div class="m-10">
                 <div class="flexslider">
                     <ul class="slides">
                         @if ($product->images->count())
@@ -59,8 +59,9 @@
 
 
                 <div class="mt-6 text-gray-700">
-                    <h2 class="font-bold text-lg">Descripción</h2>
+                    <h2 class="font-bold text-lg">Caracteristicas desctacadas:</h2>
                     {!! $product->description !!}
+                    <p class="mt-4 text-gray-700 underline"><a href="#caracteristicas">Ver mas carácteristicas</a></p>
                 </div>
 
                 {{-- <div class="p-4 flex items-center">
@@ -78,11 +79,11 @@
 
                 <div class="mt-6 flex flex-col items-center">
 
-                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="rojo-500" href="">
+                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="red-500" href="">
                         Llamanos!
                     </x-button-action>
 
-                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="green-100" href="">
+                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="green-400" href="">
                         Escribenos!
                     </x-button-action>
 
@@ -157,7 +158,7 @@
                         <div class="ml-4">
                             <a href="/" class="text-lg font-semibold text-gray-600">Para pagos contra entregas escribenos</a>
                         </div>
-                        <span class="flex items-center justify-center h-7 w-7 rounded-full bg-green-100">
+                        <span class="flex items-center justify-center h-7 w-7 rounded-full bg-green-400">
                             <i class="fab fa-whatsapp text-sm text-white"></i>
                         </span>
                     </div>
@@ -184,8 +185,10 @@
             </div>
         </div>
 
+        <div class="py-3" id="caracteristicas"></div>
+
         @if ($product->feature_details->count()>0)
-            
+           
         <div class="bg-white rounded-3xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
             
 
@@ -219,8 +222,13 @@
                 </ul>
             </div>
 
-            <div class="m-10">
-                {{ $product->detail_description }}
+            <div class="m-10 text-gray-700">
+                <div class="mb-4"> 
+                    <h2 class="text-xl">Resumen del producto:</h2>
+                    <hr class="mb-6 border-rojo-500">
+                </div>
+
+                {!! $product->detail_description !!}
             </div>
         </div>
 
