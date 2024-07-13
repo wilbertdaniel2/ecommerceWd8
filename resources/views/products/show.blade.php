@@ -1,9 +1,10 @@
 <x-app-layout>
     <div class="container py-8">
-        <div class="bg-white rounded-3xl shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
+        {{-- <div class="bg-white rounded-3xl shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6"> --}}
+            <div class="bg-white rounded-3xl shadow-lg flex flex-col md:flex-col lg:flex-row flex-row">
 
             {{-- <div class="bg-white rounded-lg shadow-lg mb-6"> --}}
-            <div class="m-10">
+            <div class="m-10 basis-1/2 ">
                 <div class="flexslider">
                     <ul class="slides">
                         @if ($product->images->count())
@@ -22,7 +23,7 @@
 
             </div>
 
-            <div class="m-10">
+            <div class="m-10 basis-1/3 ">
                 <h1 class="text-5xl font-bold text-zinc">{{ $product->name }}</h1>
                 <div class="flex">
                     <p class="text-zinc">Marca: <a class="underline capitalize hover:text-red" href="">
@@ -75,15 +76,15 @@
 
             </div>
 
-            <div class="m-10 border border-gray-800 rounded-3xl">
+            <div class="m-10 basis-1/3 h-svh border border-gray-800 rounded-3xl">
 
                 <div class="mt-6 flex flex-col items-center">
 
-                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="red-500" href="">
+                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="red-500" href="tel:+573174160446">
                         Llamanos!
                     </x-button-action>
 
-                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="green-400" href="">
+                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="green-400" href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}">
                         Escribenos!
                     </x-button-action>
 
@@ -131,7 +132,7 @@
                             <i class="fas fa-truck text-sm text-white"></i>
                         </span>
                         <div class="ml-4">
-                            <a href="/" class="text-lg font-semibold text-gray-600">Envios nacionales</a>
+                            <p class="text-lg font-semibold text-gray-600">Envios nacionales</p>
                         </div>
                     </div>
 
@@ -140,8 +141,8 @@
                             <i class="fas fa-shield-alt text-sm text-white"></i>
                         </span>
                         <div class="ml-4">
-                            <a href="/" class="text-lg font-semibold text-gray-600">Protección al
-                                comprador</a>
+                            <p class="text-lg font-semibold text-gray-600">Protección al
+                                comprador</p>
                         </div>
                     </div>
 
@@ -150,13 +151,13 @@
                             <i class="fas fa-money-bill text-sm text-white"></i>
                         </span>
                         <div class="ml-4">
-                            <a href="/" class="text-lg font-semibold text-gray-600">Pagos contra entrega</a>
+                            <p class="text-lg font-semibold text-gray-600">Pagos contra entrega</p>
                         </div>
                     </div>
 
-                    <div class="p-4 pt-6 flex items-center sm:flex-col">
+                    <div class="p-4 pt-10 flex items-center sm:flex-col">
                         <div class="ml-4">
-                            <a href="/" class="text-lg font-semibold text-gray-600">Para pagos contra entregas escribenos</a>
+                            <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}" class="text-lg font-semibold text-gray-600">Para pagos contra entregas escribenos</a>
                         </div>
                         <span class="flex items-center justify-center h-7 w-7 rounded-full bg-green-400">
                             <i class="fab fa-whatsapp text-sm text-white"></i>

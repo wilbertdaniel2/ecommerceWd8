@@ -30,6 +30,8 @@ Route::get('about', [BusinessController::class, 'about'])->name('about.index');
 Route::get('social', [BusinessController::class, 'social'])->name('social.index');
 Route::get('intellectual', [BusinessController::class, 'intellectual'])->name('intellectual.index');
 Route::get('questions', [BusinessController::class, 'questions'])->name('questions.index');
+Route::get('personal', [BusinessController::class, 'personal'])->name('personal.index');
+Route::get('term', [BusinessController::class, 'term'])->name('term.index');
 
 Route::middleware(['auth'])->group(function(){
 

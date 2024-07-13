@@ -25,4 +25,14 @@ class BusinessController extends Controller
     {
         return view('questions.index');
     }
+
+    public function personal()
+    {
+        return view('personal.index');
+    }
+
+    public function term()
+    {
+        return view('term.index');
+    }
 }

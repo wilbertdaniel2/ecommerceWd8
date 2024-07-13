@@ -239,12 +239,12 @@
                             frecuentes</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!"
+                        <a href="{{ route('personal.index') }}"
                             class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Tratamiento de datos
                             personales</a>
                     </p>
                     <p class="mb-4">
-                        <a href="#!" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Terminos
+                        <a href="{{ route('term.index') }}" class="text-neutral-400 hover:text-neutral-200 dark:text-neutral-200">Terminos
                             y condiciones</a>
                     </p>
                     <p>
