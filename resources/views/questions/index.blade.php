@@ -5,12 +5,457 @@
         <div class="text-center">
 
             <h1 class="text-xl font-bold text-gray-800">DIGITAL WD</h1>
-            <h1 class="text-xl font-bold text-rojo-600 mb-4">PREGUNTAS FRECUENTES</h1>
+            <h1 class="text-xl font-bold text-rojo-600">PREGUNTAS FRECUENTES</h1>
 
         </div>
-        
 
-        <div id="accordion-collapse" data-accordion="collapse">
+
+        <!-- component -->
+        <div class="lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
+            <div class="lg:w-8/12 w-full mx-auto">
+                <!-- Question 1 -->
+                <hr class="w-full lg:mt-10 md:mt-12 md:mb-8 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 md:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P1.</span>
+                                    ¿Qué marcas y productos distribuye Digital WD?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Digital WD distribuye una amplia gama de productos tecnológicos de marcas reconocidas a nivel mundial, incluyendo: <br>
+                            •	Smartphones: Samsung, Apple, Xiaomi, Motorola, Huawei, entre otras. <br>
+                            •	Computadoras: Laptops, desktops, tablets, all-in-one, de las marcas HP, Lenovo, ASUS, Acer, Dell, entre otras. <br>
+                            •	Televisores: Smart TVs, 4K TVs, UHD TVs, de las marcas LG, Samsung, Sony, TCL, Hisense, entre otras. <br>
+                            •	Electrodomésticos: Neveras, lavadoras, secadoras, aires acondicionados, de las marcas Samsung, LG, Whirlpool, Mabe, Haceb, entre otras. <br>
+                            •	Audio y Video: Parlantes, audífonos, barras de sonido, home theaters, de las marcas Bose, Sony, JBL, Logitech, Samsung, entre otras. <br>
+                            •	Accesorios: Fundas para celulares, cargadores, memorias USB, power banks, teclados, mouse, entre otros. 
+                            </p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P2.</span>
+                                    ¿Puedo encontrar el producto que busco en la tienda online?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Sí, puedes encontrar una gran variedad de productos en nuestra tienda online. Utiliza la barra de búsqueda para encontrar el producto 
+                            específico que deseas o navega por las diferentes categorías y subcategorías para descubrir nuevos productos.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P3.</span>
+                                    ¿Cómo puedo verificar la disponibilidad de un producto en una tienda física?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Para verificar la disponibilidad de un producto en una tienda física, puedes utilizar nuestro buscador de tiendas en la página web. 
+                            Selecciona la tienda que te gustaría visitar y el producto que buscas, y te mostraremos la disponibilidad en tiempo real.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P4.</span>
+                                    ¿Qué garantías ofrecen los productos que venden?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Todos los productos que vendemos cuentan con la garantía oficial del fabricante. La duración de la garantía varía según el producto,
+                             pero generalmente es de 1 año. Puedes encontrar información más detallada sobre la garantía de cada producto en su ficha técnica.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P5.</span>
+                                    ¿Cómo puedo realizar una devolución o cambio de producto?
+                                </p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Para realizar una devolución o cambio de producto, debes comunicarte con nuestro servicio de atención al cliente. 
+                            Te guiaremos en el proceso y te brindaremos toda la información necesaria.
+                        </p>
+                    </div>
+                </div>
+
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P6.</span>
+                                    ¿Qué métodos de pago puedo utilizar para comprar en Digital WD?
+                            </p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            En Digital WD, puedes utilizar diversos métodos de pago para realizar tus compras:
+                            •	Pago en línea: Tarjeta de crédito o débito, PSE, Efecty.
+                            •	Pago contraentrega: Paga en efectivo al recibir tu pedido.
+                            •	Pago en tienda: Puedes realizar el pago en cualquiera de nuestras tiendas físicas.
+                        </p>
+                    </div>
+                </div>
+
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P7.</span>
+                                    ¿Es seguro comprar en la tienda online de Digital WD?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Sí, comprar en la tienda online de Digital WD es completamente seguro. Implementamos las mejores prácticas de seguridad para proteger tus datos personales y financieros. 
+                            Contamos con certificados de seguridad SSL y utilizamos pasarelas de pago seguras para procesar tus transacciones.</p>
+                    </div>
+                </div>
+
+                {{-- <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q5.</span>
+                                    ¿Cómo puedo realizar el seguimiento de mi pedido?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">Una vez que hayas realizado tu pedido, recibirás un correo electrónico de confirmación con un enlace para rastrear tu pedido. 
+                            También puedes verificar el estado de tu pedido en tu cuenta en la página web.</p>
+                    </div>
+                </div>
+
+                <hr class="w-full lg:mt-10 my-8" /> --}}
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P8.</span>
+                                    ¿Cuáles son los costos de envío?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Los costos de envío varían según el método de envío que hayas elegido y el destino del pedido. Puedes encontrar información 
+                            detallada sobre los costos de envío en la página web.</p>
+                    </div>
+                </div>
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P9.</span>
+                                    ¿Cómo puedo crear una cuenta en Digital WD?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Crear una cuenta en Digital WD es muy sencillo. Solo tienes que completar un formulario con tus datos personales en la página web.</p>
+                    </div>
+                </div>
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P10.</span>
+                                    ¿Cuáles son los beneficios de tener una cuenta en Digital WD?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Tener una cuenta en Digital WD te permite: <br>
+                            •	Acceder a tu historial de compras y pedidos. <br>
+                            •	Guardar tus direcciones de envío y facturación. <br>
+                            •	Recibir notificaciones sobre promociones y ofertas especiales. <br>
+                            •	Crear listas de deseos. <br>
+                            •	Calificar y comentar productos.
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P11.</span>
+                                    ¿Cómo puedo modificar mis datos de cuenta?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Puedes modificar tus datos de cuenta en cualquier momento en la sección "Mi cuenta" de la página web.
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P12.</span>
+                                    ¿Cuántas tiendas físicas tiene Digital WD?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Tiene 3 tiendas físicas actuales, 1 en la ciudad de barranquilla, atlántico y 2 más en el magdalena, exactamente en el reten y Aracataca. 
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P13.</span>
+                                    ¿Cuál es el numero o contacto de la sede principal? </p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            Nuestro número de atención es el +57 317 4160446. Horario de atención administrativo.  
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="w-full lg:mt-10 my-8" />
+
+                <div class="w-full md:px-6">
+                    <div id="mainHeading" class="flex justify-between items-center w-full">
+                        <div class="">
+                            <p
+                                class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800">
+                                <span
+                                    class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">P14.</span>
+                                    ¿Dónde está ubicada la sede principal de Digital WD?</p>
+                        </div>
+                        <button aria-label="toggler"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                            <img class="transform dark:hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                            <img class="transform dark:block hidden "
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                        </button>
+                    </div>
+                    <div id="menu" class="hidden mt-6 w-full">
+                        <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                            La sede principal se encuentra en la ciudad de barranquilla, atlántico. Calle 72 #48-60.  
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            let elements = document.querySelectorAll("[data-menu]");
+            for (let i = 0; i < elements.length; i++) {
+                let main = elements[i];
+
+                main.addEventListener("click", function() {
+                    let element = main.parentElement.parentElement;
+                    let indicators = main.querySelectorAll("img");
+                    let child = element.querySelector("#menu");
+                    let h = element.querySelector("#mainHeading>div>p");
+
+                    h.classList.toggle("font-semibold");
+                    child.classList.toggle("hidden");
+                    // console.log(indicators[0]);
+                    indicators[0].classList.toggle("rotate-180");
+                });
+            }
+        </script>
+
+        {{-- <div id="accordion-collapse" data-accordion="collapse">
             <h2 id="accordion-collapse-heading-1">
                 <button type="button"
                     class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
@@ -307,9 +752,9 @@
                         Puedes modificar tus datos de cuenta en cualquier momento en la sección "Mi cuenta" de la página web.
                     </p>
                 </div>
-            </div>
+            </div> --}}
 
-            {{-- <h2 id="accordion-collapse-heading-14">
+        {{-- <h2 id="accordion-collapse-heading-14">
                 <button type="button"
                     class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
                     data-accordion-target="#accordion-collapse-body-14" aria-expanded="false"
@@ -331,7 +776,7 @@
                 </div>
             </div> --}}
 
-            <h2 id="accordion-collapse-heading-15">
+        {{-- <h2 id="accordion-collapse-heading-15">
                 <button type="button"
                     class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
                     data-accordion-target="#accordion-collapse-body-15" aria-expanded="false"
@@ -395,7 +840,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> --}}
     </div>
 
 

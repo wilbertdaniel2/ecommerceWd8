@@ -80,7 +80,7 @@
 
                 <div class="mt-6 flex flex-col items-center">
 
-                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="red-500" href="tel:+573174160446">
+                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="rojo-500" href="tel:+573174160446">
                         Llamanos!
                     </x-button-action>
 

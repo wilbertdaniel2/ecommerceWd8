@@ -72,7 +72,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css') }}">
 
     {{-- Flowbite --}}
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    {{-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> --}}
 
 
     @livewireStyles
@@ -98,7 +98,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     {{-- flowbite --}}
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script> --}}
 
 
     {{-- SlickJs --}}
