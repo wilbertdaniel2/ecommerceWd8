@@ -76,113 +76,116 @@
 
             </div>
 
-            <div class="m-10 basis-1/3 h-svh border border-gray-800 rounded-3xl">
+            <div class="m-10 basis-1/3">
 
-                <div class="mt-6 flex flex-col items-center">
+                <div class="border border-gray-800 rounded-3xl">
+                    <div class="mt-6 flex flex-col items-center">
 
-                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="rojo-500" href="tel:+573174160446">
-                        Llamanos!
-                    </x-button-action>
-
-                    <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="green-400" href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}">
-                        Escribenos!
-                    </x-button-action>
-
-                    {{-- <div class="p-4 flex items-center">
-                        <div class="ml-4">
-                            <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
-                                target="_blank">
-                                <img src="{{ asset('img/pago.gif') }}" alt="Contactar por WhatsApp">
-                            </a>
+                        <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="rojo-500" href="tel:+573174160446">
+                            Llamanos!
+                        </x-button-action>
+    
+                        <x-button-action class="py-4 w-48 md:w-48 lg:w-48 xl:w-64 rounded-ful my-3" color="green-400" href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}">
+                            Escribenos!
+                        </x-button-action>
+    
+                        {{-- <div class="p-4 flex items-center">
+                            <div class="ml-4">
+                                <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
+                                    target="_blank">
+                                    <img src="{{ asset('img/pago.gif') }}" alt="Contactar por WhatsApp">
+                                </a>
+                            </div>
                         </div>
+    
+                        <div class="p-4 flex items-center">
+                            <img class="flex items-center justify-center h-10 w-10 rounded-full"
+                                src="{{ asset('img/logo-wasap.png') }}" alt="">
+                            <div class="ml-4">
+                                <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
+                                    class="underline text-lg font-semibold text-green-600">Contacta con nosotros!</a>
+                            </div>
+                        </div>
+    
+                        {{-- <div class="p-4 flex items-center">
+                            <span class="flex items-center justify-center h-10 w-10 rounded-full bg-rojo-600">
+                                <i class="fas fa-phone-alt text-sm text-white"></i>
+                            </span>
+                            <div class="ml-4">
+                                <a href="/" class="underline text-lg font-semibold text-rojo-600">Comuniquese con nosotros</a>                          
+                            </div>
+                        </div> --}}
                     </div>
-
-                    <div class="p-4 flex items-center">
-                        <img class="flex items-center justify-center h-10 w-10 rounded-full"
-                            src="{{ asset('img/logo-wasap.png') }}" alt="">
-                        <div class="ml-4">
-                            <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}"
-                                class="underline text-lg font-semibold text-green-600">Contacta con nosotros!</a>
+    
+                    <div class="m-4 text-center">
+    
+                
+                        {{-- <p class="text-sm font-semibold text-gray-500 my-4">
+                        <del>Antes: $ {{ number_format($product->false_price) }}</del>
+                        </p>
+    
+                        <p class="text-2xl font-semibold text-truegray my-4">
+                            $ {{ number_format($product->price) }}
+                        </p> --}}
+    
+                        <div class="p-4 flex items-center">
+                            <span class="flex items-center justify-center h-10 w-10 rounded-full bg-tahiti-600">
+                                <i class="fas fa-truck text-sm text-white"></i>
+                            </span>
+                            <div class="ml-4">
+                                <p class="text-lg font-semibold text-gray-600">Envios nacionales</p>
+                            </div>
                         </div>
+    
+                        <div class="p-4 pt-1 flex items-center">
+                            <span class="flex items-center justify-center h-10 w-10 rounded-full bg-tahiti-600">
+                                <i class="fas fa-shield-alt text-sm text-white"></i>
+                            </span>
+                            <div class="ml-4">
+                                <p class="text-lg font-semibold text-gray-600">Protección al
+                                    comprador</p>
+                            </div>
+                        </div>
+    
+                        <div class="p-4 pt-1 flex items-center">
+                            <span class="flex items-center justify-center h-10 w-10 rounded-full bg-tahiti-600">
+                                <i class="fas fa-money-bill text-sm text-white"></i>
+                            </span>
+                            <div class="ml-4">
+                                <p class="text-lg font-semibold text-gray-600">Pagos contra entrega</p>
+                            </div>
+                        </div>
+    
+                        <div class="p-4 pt-10 flex items-center sm:flex-col">
+                            <div class="ml-4">
+                                <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}" class="text-lg font-semibold text-gray-600">Para pagos contra entregas escribenos</a>
+                            </div>
+                            <span class="flex items-center justify-center h-7 w-7 rounded-full bg-green-400">
+                                <i class="fab fa-whatsapp text-sm text-white"></i>
+                            </span>
+                        </div>
+    
+    
+                        
+    
+                        {{-- Aqui condiciono la informacion que quiero mostrar dependiendo del producto --}}
+                        {{-- @if ($product->subcategory->capacity)
+    
+                        @livewire('add-cart-item-capacity', ['product' => $product])
+    
+                        @elseif($product->subcategory->color)
+    
+                            @livewire('add-cart-item-color', ['product' => $product])
+    
+                        @else    
+    
+                        @livewire('add-cart-item', ['product' => $product])
+    
+                        @endif --}}
+    
                     </div>
-
-                    {{-- <div class="p-4 flex items-center">
-                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-rojo-600">
-                            <i class="fas fa-phone-alt text-sm text-white"></i>
-                        </span>
-                        <div class="ml-4">
-                            <a href="/" class="underline text-lg font-semibold text-rojo-600">Comuniquese con nosotros</a>                          
-                        </div>
-                    </div> --}}
                 </div>
-
-                <div class="m-4 text-center">
-
-            
-                    {{-- <p class="text-sm font-semibold text-gray-500 my-4">
-                    <del>Antes: $ {{ number_format($product->false_price) }}</del>
-                    </p>
-
-                    <p class="text-2xl font-semibold text-truegray my-4">
-                        $ {{ number_format($product->price) }}
-                    </p> --}}
-
-                    <div class="p-4 flex items-center">
-                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-tahiti-600">
-                            <i class="fas fa-truck text-sm text-white"></i>
-                        </span>
-                        <div class="ml-4">
-                            <p class="text-lg font-semibold text-gray-600">Envios nacionales</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 pt-1 flex items-center">
-                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-tahiti-600">
-                            <i class="fas fa-shield-alt text-sm text-white"></i>
-                        </span>
-                        <div class="ml-4">
-                            <p class="text-lg font-semibold text-gray-600">Protección al
-                                comprador</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 pt-1 flex items-center">
-                        <span class="flex items-center justify-center h-10 w-10 rounded-full bg-tahiti-600">
-                            <i class="fas fa-money-bill text-sm text-white"></i>
-                        </span>
-                        <div class="ml-4">
-                            <p class="text-lg font-semibold text-gray-600">Pagos contra entrega</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 pt-10 flex items-center sm:flex-col">
-                        <div class="ml-4">
-                            <a href="https://api.whatsapp.com/send?phone=3174160446&text=Estoy%20interesado%20en%20el%20producto:%20{{ $product->name }}" class="text-lg font-semibold text-gray-600">Para pagos contra entregas escribenos</a>
-                        </div>
-                        <span class="flex items-center justify-center h-7 w-7 rounded-full bg-green-400">
-                            <i class="fab fa-whatsapp text-sm text-white"></i>
-                        </span>
-                    </div>
-
-
-                    
-
-                    {{-- Aqui condiciono la informacion que quiero mostrar dependiendo del producto --}}
-                    {{-- @if ($product->subcategory->capacity)
-
-                    @livewire('add-cart-item-capacity', ['product' => $product])
-
-                    @elseif($product->subcategory->color)
-
-                        @livewire('add-cart-item-color', ['product' => $product])
-
-                    @else    
-
-                    @livewire('add-cart-item', ['product' => $product])
-
-                    @endif --}}
-
-                </div>
+                
             </div>
         </div>
 
