@@ -24,7 +24,7 @@
             </div>
 
             <div class="m-10 basis-1/3 ">
-                <h1 class="text-5xl font-bold text-zinc">{{ $product->name }}</h1>
+                <h1 class="text-3xl font-bold text-zinc text-left">{{ $product->name }}</h1>
                 <div class="flex">
                     <p class="text-zinc">Marca: <a class="underline capitalize hover:text-red" href="">
                             {{ $product->brand->name }}</a></p>
