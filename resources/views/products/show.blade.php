@@ -60,7 +60,7 @@
 
 
                 <div class="mt-6 text-gray-700">
-                    <h2 class="font-bold text-lg">Caracteristicas desctacadas:</h2>
+                    <h2 class="font-bold text-lg">Características destacadas:</h2>
                     {!! $product->description !!}
                     <p class="mt-4 text-gray-700 underline"><a href="#caracteristicas">Ver mas carácteristicas</a></p>
                 </div>
