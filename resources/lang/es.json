@@ -466,5 +466,11 @@
     "blue": "Azul",
     "red": "Rojo",
     "Profile" : "Mi perfil",
-    "Log Out" : "Salir"
+    "Log Out" : "Salir",
+    "Name": "Nombre",
+    "Phone Number": "Numero de telefono",
+    "Whoops! Something went wrong.": "¡Vaya! Algo salió mal.",
+    "Login": "Iniciar Sesión",
+    "Register": "Registrarse",
+    "Already registered?": "¿Ya estas registrado?"
 }
